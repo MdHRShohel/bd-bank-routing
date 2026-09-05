@@ -21,7 +21,7 @@
  * ```
  */
 
-import dataset from "./banks.json";
+import dataset from "./dataset.js";
 
 /** Wording that marks a BACH settlement endpoint rather than a branch anyone
  *  banks at. `HEAD OFFICE` is deliberately absent — some head offices are

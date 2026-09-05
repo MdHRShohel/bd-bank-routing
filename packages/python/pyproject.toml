@@ -8,7 +8,8 @@ version = "0.1.0"
 description = "Bangladesh bank, branch and BEFTN routing data — with the receipts"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "Md HR Shohel" }]
 keywords = [
   "bangladesh", "bd", "bank", "beftn", "routing", "routing-number",
@@ -33,7 +34,14 @@ Issues = "https://github.com/MdHRShohel/bd-bank-routing/issues"
 packages = ["src/bdbanks"]
 
 [tool.hatch.build]
-include = ["src/bdbanks/**/*.py", "src/bdbanks/banks.json"]
+# py.typed is the marker that tells a type checker to READ the annotations in
+# this package. Without it the "Typing :: Typed" classifier is a claim the
+# distribution does not honour, and mypy silently treats the package as Any.
+include = [
+  "src/bdbanks/**/*.py",
+  "src/bdbanks/banks.json",
+  "src/bdbanks/py.typed",
+]
 
 [dependency-groups]
 dev = ["pytest>=8.0"]

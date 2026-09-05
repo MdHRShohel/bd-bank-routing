@@ -578,3 +578,37 @@ td.name a:hover { color: var(--accent); text-decoration: underline; }
 :target, section[id], [id^="lookup"], #faq, #banks, #install, #catches, #provenance {
   scroll-margin-top: 76px;
 }
+
+/* ---------- the BD mark --------------------------------------------------- */
+
+/* Bangladesh's flag colours, not the site's accent green: bottle green with the
+   red disc set slightly left of centre, the way the real flag is drawn. The dark
+   theme lifts the green, because #006a4e on a navy ground goes muddy. */
+:root { --bd-green: #00a86b; --bd-red: #f42a41; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { --bd-green: #006a4e; --bd-red: #e8112d; }
+}
+:root[data-theme="light"] { --bd-green: #006a4e; --bd-red: #e8112d; }
+
+.wordmark .flag {
+  width: 25px; height: 15px; flex: none;
+  border-radius: 2.5px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--fg) 12%, transparent);
+}
+.wordmark .bd {
+  font: 700 16px/1 var(--mono);
+  letter-spacing: 0.02em;
+  color: var(--fg);
+}
+.wordmark .rest {
+  font: 500 15px/1 var(--mono);
+  letter-spacing: -0.02em;
+  color: var(--fg-muted);
+  margin-inline-start: -0.2rem;
+}
+.wordmark:hover .rest { color: var(--fg); }
+@media (max-width: 600px) {
+  .wordmark .flag { width: 22px; height: 13px; }
+  .wordmark .bd { font-size: 14.5px; }
+  .wordmark .rest { font-size: 13.5px; }
+}

@@ -1,4 +1,4 @@
-# bd-bank-routing
+# BD Bank Routing
 
 > Bangladesh bank, branch and BEFTN routing-number data with per-bank provenance:
 > 63 institutions, 11,426 branches, all

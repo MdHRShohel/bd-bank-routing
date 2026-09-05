@@ -52,4 +52,8 @@ echo "== javascript =="
 (cd packages/js && npm run --silent build && npx --no-install vitest run --reporter dot)
 
 echo
+echo "== packages as installed =="
+./scripts/verify_dist.sh
+
+echo
 echo "all gates passed"

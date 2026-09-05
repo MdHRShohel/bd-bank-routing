@@ -17,7 +17,9 @@ AUTHOR_NAME = "Md. Habibur Rahman Shohel"
 AUTHOR_SITE = "https://shohel.bro.bd"
 AUTHOR_GITHUB = "https://github.com/MdHRShohel"
 
-SITE_NAME = "bd-bank-routing"
+#: What the site calls itself to people and to crawlers. The package and
+#: repository keep the install-name spelling, `bd-bank-routing`.
+SITE_NAME = "BD Bank Routing"
 
 
 def slugify(name: str) -> str:

@@ -23,6 +23,8 @@ BG = (15, 23, 42)
 FG = (248, 250, 252)
 MUTED = (154, 171, 199)
 ACCENT = (34, 197, 94)
+BD_GREEN = (0, 168, 107)
+BD_RED = (244, 42, 65)
 INFO = (96, 165, 250)
 WARN = (251, 191, 36)
 LINE = (43, 58, 92)
@@ -45,8 +47,12 @@ def main() -> None:
     for y in range(0, 630, 42):
         d.line([(0, y), (1200, y)], fill=(23, 32, 58), width=1)
 
-    d.ellipse([72, 66, 92, 86], fill=ACCENT)
-    d.text((108, 64), "bd-bank-routing", font=font(MONO_BOLD, 27, 1), fill=FG)
+    fx0, fy0, fw, fh = 72, 60, 50, 30
+    d.rounded_rectangle([fx0, fy0, fx0 + fw, fy0 + fh], radius=6, fill=BD_GREEN)
+    cx, cy, r = fx0 + fw * 0.45, fy0 + fh / 2, fh * 0.36
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=BD_RED)
+    d.text((138, 60), "BD", font=font(MONO_BOLD, 30, 1), fill=FG)
+    d.text((182, 62), "Bank Routing", font=font(MONO, 28, 1), fill=MUTED)
 
     d.text((72, 146), "Bangladesh bank", font=font(MONO_BOLD, 68, 1), fill=FG)
     d.text((72, 224), "routing numbers,", font=font(MONO_BOLD, 68, 1), fill=FG)
@@ -82,8 +88,8 @@ def main() -> None:
     # console is a 404 in the console.
     icon = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
     di = ImageDraw.Draw(icon)
-    di.rounded_rectangle([0, 0, 255, 255], radius=56, fill=BG)
-    di.ellipse([88, 88, 168, 168], fill=ACCENT)
+    di.rounded_rectangle([0, 0, 255, 255], radius=56, fill=BD_GREEN)
+    di.ellipse([62, 74, 182, 194], fill=BD_RED)
     icon.save(ICO, "ICO", sizes=[(16, 16), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)])
     print(f"  wrote {ICO.relative_to(ROOT)}  {ICO.stat().st_size / 1024:.0f} KB")
 

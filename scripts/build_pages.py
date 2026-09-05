@@ -97,7 +97,7 @@ def head(*, title: str, description: str, canonical: str, extra: str = "") -> st
 def chrome_header(prefix: str) -> str:
     return f"""<header class="site-head">
   <div class="wrap">
-    <a class="wordmark plain" href="{prefix}"><span class="dot" aria-hidden="true"></span>bd-bank-routing</a>
+    <a class="wordmark plain" href="{prefix}" aria-label="BD Bank Routing — Bangladesh bank routing numbers"><svg class="flag" viewBox="0 0 20 12" aria-hidden="true"><rect width="20" height="12" rx="2.5" fill="var(--bd-green)"/><circle cx="9" cy="6" r="3.5" fill="var(--bd-red)"/></svg><span class="bd">BD</span><span class="rest">Bank Routing</span></a>
     <nav class="site-nav" aria-label="Sections">
       <a href="{prefix}#lookup">Lookup</a>
       <a href="{prefix}#banks">Banks</a>
@@ -145,7 +145,7 @@ def bank_page(bank: dict, district_by_code: dict[str, str], generated: str) -> s
     districts = sorted({b["district"] for b in branches if b["district"]})
     payable = bank["payable"]
 
-    title = f"{name} routing numbers — all {len(branches):,} branches | bd-bank-routing"
+    title = f"{name} routing numbers — all {len(branches):,} branches | {SITE_NAME}"
     description = (
         f"Every {name} branch routing number ({len(branches):,} branches across "
         f"{len(districts)} districts), with the district each nine-digit code points at. "
