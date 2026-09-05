@@ -1,0 +1,57 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-05
+# name: SHIMANTO BANK PLC
+# branches: 28
+# SHIMANTO BANK PLC (305) -- Border Guard Bangladesh's bank, on Bangladesh Bank's
+# scheduled-bank list, and absent from our directory ENTIRELY: no entry and not
+# one routing number, so an employee banking here could not be selected in the
+# picker and could not be paid by bank transfer at all.
+#
+# ADDITIVE, AND NOT FROM THE BANK'S OWN SITE. shimantobank.com's location page is
+# a 4 KB JavaScript stub with no branch data, which is why this bank stayed
+# blocked through the whole sweep. This is the consolidated BACH routing table
+# (26.06.2025) published by Dhaka Bank PLC, used with the owner's explicit
+# approval and ONLY to ADD. If the bank later publishes its own list, that wins.
+#
+# ONE ROW NEEDED A WRAPPED-LINE FIX: 305270364's name is
+# "RTGS-INTERBANK FOREX TRANSACTIONS", long enough that the PDF pushed the
+# routing onto the NEXT line, leaving a routing with a blank name. Reading only
+# the routing's own line would have filed an RTGS endpoint as an unnamed branch.
+#
+# ENDPOINTS EXCLUDED (3): 305260008 TRUNCATION POINT, 305270364 RTGS-INTERBANK FOREX TRANSACTIONS, 305270780 REMITTANCE
+# HEAD OFFICE IS KEPT: the directory does not regex those away -- some are
+# genuinely payable branches (Sonali's is) -- and nothing here shows this one is
+# not.
+#
+# Districts are DERIVED from routing digits 4-5 against our own corpus, not taken
+# from the source's district column. Where a code is ambiguous in our corpus the
+# source's column agrees with the choice: 12 BRAHMANBARIA (not Bogura), 22
+# COXS_BAZAR (not Dhaka), 27 DHAKA (not Narayanganj), 91 SYLHET (not Sherpur).
+305120180|CHAMPOKNAGAR|BRAHMANBARIA
+305120430|BRAHMANBARIA|BRAHMANBARIA
+305150134|AGRABAD|CHATTOGRAM
+305157061|SATKANIA|CHATTOGRAM
+305180191|CHUADANGA|CHUADANGA
+305190457|BIBIR BAZAR|CUMILLA
+305220251|COXS BAZAR|COXS_BAZAR
+305220914|TEKNAF|COXS_BAZAR
+305260211|PRINCIPAL|DHAKA
+305261728|GULSHAN|DHAKA
+305264633|UTTARA|DHAKA
+305270748|HAZARIBAG|DHAKA
+305272683|HEAD OFFICE|DHAKA
+305274249|MOTIJHEEL|DHAKA
+305280112|HILI|DINAJPUR
+305280525|CHIRIRBANDAR|DINAJPUR
+305410124|GODKHALI|JASHORE
+305410287|BENAPOLE|JASHORE
+305471547|KHULNA|KHULNA
+305500942|KUSHTIA|KUSHTIA
+305501396|PRAGPUR|KUSHTIA
+305520469|LALMONIRHAT|LALMONIRHAT
+305610182|SEEDSTORE|MYMENSINGH
+305611752|MYMENSINGH|MYMENSINGH
+305811936|RAJSHAHI|RAJSHAHI
+305851459|RANGPUR|RANGPUR
+305913555|SYLHET|SYLHET
+305914125|ZAKIGANJ|SYLHET

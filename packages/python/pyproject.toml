@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bd-bank-routing"
+version = "0.1.0"
+description = "Bangladesh bank, branch and BEFTN routing data — with the receipts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Md HR Shohel" }]
+keywords = [
+  "bangladesh", "bd", "bank", "beftn", "routing", "routing-number",
+  "bank-routing-number", "branch", "fintech", "payroll", "banking",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Office/Business :: Financial",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/MdHRShohel/bd-bank-routing"
+Issues = "https://github.com/MdHRShohel/bd-bank-routing/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bdbanks"]
+
+[tool.hatch.build]
+include = ["src/bdbanks/**/*.py", "src/bdbanks/banks.json"]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+# The package is a plain `src/` layout with no install step in CI, so point
+# pytest at it directly. Without this the suite passes only for whoever happens
+# to have PYTHONPATH set, which is not a suite anyone can trust.
+pythonpath = ["src"]
+testpaths = ["tests"]

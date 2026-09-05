@@ -1,0 +1,24 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-04
+# name: WOORI BANK
+# branches: 7
+# ADDITIVE. Not this bank's own site -- it has not been settled against one yet.
+# THE GAP THIS CLOSES: we held 3 of the 7 branches the consolidated
+#   BACH routing table lists for this bank. 4 were missing, and each was an
+#   employee who could not be selected in the branch picker at all.
+# The source is the BACH table published by Dhaka Bank PLC (26.06.2025),
+#   validated at ~98% against the 23 banks settled from their OWN sites, and used
+#   ONLY to ADD -- it omits four of our banks entirely (NCC, BDBL, HSBC, CGA), so
+#   it is never an authority on absence. Rows of ours it lacks are KEPT.
+# Settlement endpoints in the source are excluded.
+# Districts are DERIVED from routing digits 4-5.
+# STILL WORTH DOING: settling this bank against its OWN published list, which
+#   would be better evidence than a third party's table however well it checks
+#   out. Tracked under BANK-VERIFY-SWEEP-1.
+255151962|CHITTAGONG|CHATTOGRAM
+255262985|MIRPUR|DHAKA
+255264633|UTTARA|DHAKA
+255270801|KAWRAN BAZAR|DHAKA
+255271518|DHAKA|DHAKA
+255274249|MOTIJHEEL|DHAKA
+255671189|NARAYANGANJ|NARAYANGANJ

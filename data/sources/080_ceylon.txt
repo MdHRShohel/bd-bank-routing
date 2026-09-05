@@ -1,0 +1,28 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-04
+# name: COMMERCIAL BANK OF CEYLON LIMITED
+# branches: 11
+# ADDITIVE. Not this bank's own site -- it has not been settled against one yet.
+# THE GAP THIS CLOSES: we held 10 of the 11 branches the consolidated
+#   BACH routing table lists for this bank. 1 were missing, and each was an
+#   employee who could not be selected in the branch picker at all.
+# The source is the BACH table published by Dhaka Bank PLC (26.06.2025),
+#   validated at ~98% against the 23 banks settled from their OWN sites, and used
+#   ONLY to ADD -- it omits four of our banks entirely (NCC, BDBL, HSBC, CGA), so
+#   it is never an authority on absence. Rows of ours it lacks are KEPT.
+# Settlement endpoints in the source are excluded.
+# Districts are DERIVED from routing digits 4-5.
+# STILL WORTH DOING: settling this bank against its OWN published list, which
+#   would be better evidence than a third party's table however well it checks
+#   out. Tracked under BANK-VERIFY-SWEEP-1.
+080151966|CHITTAGONG|CHATTOGRAM
+080260857|CORPORATE|DHAKA
+080261180|DHANMONDI|DHAKA
+080261722|GULSHAN|DHAKA
+080262989|MIRPUR|DHAKA
+080263612|PANTHA PATH|DHAKA
+080264482|TEJGAON|DHAKA
+080264637|UTTARA|DHAKA
+080271512|DHAKA|DHAKA
+080671183|NARAYANGANJ|NARAYANGANJ
+080913670|SYLHET SADAR|SYLHET

@@ -1,0 +1,17 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-06
+# name: HABIB BANK LTD.
+# branches: 7
+# HABIB BANK LTD. (110).
+# NOT FROM THE BANK'S OWN SITE. This bank publishes branch LOCATIONS but no
+# BEFTN routing numbers, so it cannot be settled against itself. Taken from the
+# consolidated BACH routing table (26.06.2025) published by Dhaka Bank PLC.
+# A snapshot: never authority for a branch being ABSENT.
+# Settlement endpoints excluded (5): 110270009, 110270362, 110270388, 110270391, 110270788
+110154541|EAST|CHATTOGRAM
+110261726|GULSHAN|DHAKA
+110262538|KARWAN BAZAR|DHAKA
+110264631|UTTARA|DHAKA
+110274247|MOTIJHEEL|DHAKA
+110274818|NAYA BAZAR|DHAKA
+110913553|SYLHET|SYLHET

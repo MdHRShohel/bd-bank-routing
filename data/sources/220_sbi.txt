@@ -1,0 +1,32 @@
+# source: https://bd.statebank/branch-locator
+# checked: 2026-09-05
+# name: STATE BANK OF INDIA
+# branches: 6 (3 published by the bank + 3 retained)
+# STATE BANK OF INDIA (220), settled against the bank's own branch locator.
+# The owner supplied the URL.
+#
+# THE BANK PUBLISHES 3 ROUTING NUMBERS AND ALL 3 MATCH OURS EXACTLY:
+#   220151968  Chattogram Branch   (we store it as CHITTAGONG BRANCH)
+#   220271514  Dhaka Branch
+#   220471543  Khulna Branch
+# Each is read from inside its own branch block, next to that branch's SWIFT and
+# address (RULE 0), not matched across the page.
+#
+# THREE 9-DIGIT RUNS ON THE PAGE ARE NOT ROUTINGS: 222280469, 222289152 and
+# 222289153 are telephone numbers (`Tel: +88 02 2222...`). Same false-positive
+# class as Al-Arafah's 015 mobiles and Bengal Commercial's footer phone, which is
+# why routings are read only from the labelled `Routing Number:` field.
+#
+# RETAINED vs the locator -- kept, not deleted (BANK-UNLISTED-10):
+#   220261724  GULSHAN BRANCH
+#   220811932  RAJSHAHI BRANCH
+#   220913551  SYLHET BRANCH
+# A bank's own page can be a SUBSET of its network -- Shahjalal proved that, where
+# applying the site's 70 would have deleted 39 real branches. All three are
+# corroborated by the BACH table, which carries 6 payable SBI rows to our 6.
+220151968|CHITTAGONG BRANCH|CHITTAGONG
+220261724|GULSHAN BRANCH|DHAKA
+220271514|DHAKA BRANCH|DHAKA
+220471543|KHULNA BRANCH|KHULNA
+220811932|RAJSHAHI BRANCH|RAJSHAHI
+220913551|SYLHET BRANCH|SYLHET

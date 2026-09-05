@@ -1,0 +1,17 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-06
+# name: BANK AL-FALAH LIMITED
+# branches: 7
+# BANK AL-FALAH LIMITED (065).
+# NOT FROM THE BANK'S OWN SITE. This bank publishes branch LOCATIONS but no
+# BEFTN routing numbers, so it cannot be settled against itself. Taken from the
+# consolidated BACH routing table (26.06.2025) published by Dhaka Bank PLC.
+# A snapshot: never authority for a branch being ABSENT.
+# Settlement endpoints excluded (5): 065270004, 065270367, 065270383, 065270396, 065270783
+065150137|AL-FALAH LTD CHITTAGONG AGRABAD|CHATTOGRAM
+065261189|AL-FALAH LTD DHAKA-NORTH DHANMONDI|DHAKA
+065261721|AL-FALAH LTD DHAKA-NORTH GULSHAN|DHAKA
+065262988|AL-FALAH LTD DHAKA-NORTH MIRPUR|DHAKA
+065264636|AL-FALAH LTD DHAKA-NORTH UTTARA|DHAKA
+065271782|AL-FALAH LTD DHAKA-SOUTH DHAKA(MAIN)|DHAKA
+065913558|AL-FALAH LTD SYLHET SYLHET|SYLHET

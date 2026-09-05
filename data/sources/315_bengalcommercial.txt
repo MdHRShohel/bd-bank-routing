@@ -1,0 +1,57 @@
+# source: https://www.bgcb.com.bd/branch
+# checked: 2026-09-05
+# name: BENGAL COMMERCIAL BANK PLC.
+# branches: 26
+# Bengal Commercial Bank PLC — on Bangladesh Bank's scheduled-bank list but
+# absent from our directory entirely, so an employee banking here could not be
+# selected in the picker and therefore could not be paid by bank transfer.
+#
+# b6f4a2c81e93 left this bank out ON PURPOSE and was right to: its own site was
+# said to show 37 branches while the reference gave 27, five of them settlement
+# endpoints, behind a JavaScript locator.
+#
+# Its /branch page renders one card per branch — `<h3>` name, address, and
+# "Routing Number:" in the SAME card — so name and routing are paired inside one
+# card (RULE 0), never matched across the page.
+#
+# ONLY 26 OF ITS 37 BRANCHES PUBLISH A ROUTING NUMBER. The page carries 37
+# distinct `<branch>.branch@bgcb.com.bd` mailboxes but only 26 routing numbers;
+# the other 11 (ashkona, ashulia, dupchanchia, haragach, kamrangirchar, karwan,
+# khatunganj, namabazar, poddarbazar, rampura, tongi) appear as an email address
+# with no branch card and no routing anywhere on the page. They are LEFT OUT
+# rather than guessed — see BANK-BGCB-UNPUBLISHED-11.
+#
+# One 9-digit run on the page is NOT a routing: `255068880` is the bank's own
+# phone number in a commented-out footer block. Same false-positive class as
+# Al-Arafah's `015...` mobile numbers, which is why routings are read only from
+# the labelled "Routing Number:" field.
+#
+# Districts come from digits 4-5 and were confirmed against each card's address.
+# Two codes are ambiguous in our corpus and the address decides them: 27 (Dhaka
+# vs Narayanganj) is Dhaka for all five, and 91 (Sherpur vs Sylhet) is Sylhet.
+315060285|Barishal Branch|Barishal
+315100374|Bogura Branch|Bogura
+315150137|Agrabad Islami Banking Branch|Chattogram
+315150524|Anowara Branch|Chattogram
+315152748|Fatikchari Branch|Chattogram
+315191909|Eliotganj Branch|Cumilla
+315260135|Hemayetpur Branch|Dhaka
+315260243|Sonargaon Janapath Branch|Dhaka
+315260430|Banani Branch|Dhaka
+315260856|Corporate Branch|Dhaka
+315262988|Mirpur Branch|Dhaka
+315263190|Mohakhali Branch|Dhaka
+315264810|Zirabo Branch|Dhaka
+315270341|Ati Bazar Branch|Dhaka
+315271908|Dilkusha Islamic Banking Branch|Dhaka
+315272565|Hasnabad Branch|Dhaka
+315272802|Imamgonj Branch|Dhaka
+315276079|Satmasjid Road Branch|Dhaka
+315590100|Baligaon Branch|Munshiganj
+315671182|Naraynganj Branch|Narayanganj
+315681398|Velanagar Branch|Narsingdi
+315750340|Chowmuhani Branch|Noakhali
+315760172|Kashinathpur Islami Banking Branch|Pabna
+315851452|Rangpur Branch|Rangpur
+315913558|Sylhet Branch|Sylhet
+315931035|Gorai Branch|Tangail

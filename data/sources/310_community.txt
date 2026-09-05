@@ -1,0 +1,28 @@
+# source: https://www.communitybankbd.com/branches
+# checked: 2026-09-04
+# name: COMMUNITY BANK BANGLADESH PLC
+# branches: 18
+# note: the bank also publishes a JASHORE BRANCH, but neither the site nor any
+#   source we hold gives its routing number, so it is not listed here. A branch
+#   cannot be added without one — an invented routing number is a failed or
+#   misrouted payment. Tracked as part of BANK-VERIFY-SWEEP-1.
+# removed vs the scrape: HEAD OFFICE, REMITTANCE, TRUNCATION POINT and three
+#   RTGS-* settlement endpoints — none are branches a salary can be paid into.
+310150132|AGRABAD BRANCH|Chattogram
+310150466|ANDERKILLA BRANCH|Chattogram
+310192116|GOURIPUR BRANCH|Cumilla
+310260851|CORPORATE BRANCH|Dhaka
+310261726|GULSHAN BRANCH|Dhaka
+310264631|UTTARA BRANCH|Dhaka
+310270517|DHANMONDI BRANCH|Dhaka
+310271279|CHAWKBAZAR BRANCH|Dhaka
+310274247|MOTIJHEEL BRANCH|Dhaka
+310274692|NAWABGANJ BRANCH|Dhaka
+310282084|RANIRBANDAR BRANCH|Dinajpur
+310331001|MAWNA BRANCH|Gazipur
+310360098|NOAPARA BRANCH|Habiganj
+310471545|KHULNA BRANCH|Khulna
+310610948|FULBARIA BRANCH|Mymensingh
+310671387|PANCHABATI BRANCH|Narayanganj
+310680215|PANCHDONA BRANCH|Narsingdi
+310931519|MIRZAPUR BRANCH|Tangail

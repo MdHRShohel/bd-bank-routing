@@ -1,0 +1,23 @@
+The dataset in `data/` is released under CC0 1.0 Universal (public domain
+dedication): https://creativecommons.org/publicdomain/zero/1.0/
+
+Routing numbers, bank names, branch names and districts are public facts. They
+are not the author's to restrict, and the point of collecting them is for other
+people to use them without having to ask.
+
+The compilation, the source annotations and the accompanying code are the work
+being given away here.
+
+A REQUEST, NOT A CONDITION
+--------------------------
+CC0 imposes no obligations, so this is a request. If you redistribute this data,
+carry the `# source:` and `# checked:` lines with it. They are what separate a
+dataset someone can verify from another anonymous scrape — which is the problem
+this set was built to fix. A copy without provenance recreates it.
+
+NO WARRANTY
+-----------
+Banks open, close and rename branches. Every bank records the date it was last
+checked so you can judge for yourself. Nothing here is a guarantee that a routing
+number is currently valid, and it is not a substitute for the receiving bank's
+own confirmation before money moves.

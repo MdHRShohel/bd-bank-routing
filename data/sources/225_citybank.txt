@@ -1,0 +1,157 @@
+# source: https://www.citybankplc.com/locator?type=Branch
+# checked: 2026-09-04
+# name: CITY BANK PLC
+# branches: 134 (133 published + 1 retained)
+# Captured by paging the bank's own locator (14 pages), pairing each branch
+# name with the routing number in its own card. Districts are DERIVED from
+# routing digits 4-5 against our verified corpus — the locator groups by
+# division, not district.
+# Two rows list a contact email where the name should be; the address names the
+# branch itself (bhola.branch@, tekerhat_branch@), so those are read from it.
+# Removed vs the scrape: TRUNCATION POINT and HEAD OFFICE — settlement endpoints,
+# absent from the bank's list and not places a salary can be paid.
+#
+# RETAINED vs the bank's list: 225262531 Kawran Bazar Branch is in our data but
+# not on the bank's locator. It reads as a normal branch, not an endpoint, so it
+# is KEPT per BANK-UNLISTED-10: deleting an open branch makes an employee
+# unpayable and orphans an account already saved against it, while keeping a
+# closed one only fails later at BEFTN validation, visibly, and cannot misroute
+# money because routing numbers are not reused.
+#
+# d4e8b1029f76 DELETED it before that policy was settled. City Bank is this org's
+# own disbursement bank, which makes an orphaned mapping here more likely to
+# matter, not less. Restored by b2d7e94f1a06.
+225060283|Barisal Branch|BARISHAL
+225090103|Bhola Branch|BHOLA
+225100372|Bogra Branch|BOGURA
+225102741|Sherpur Branch|BOGURA
+225120431|Brahmanbaria Branch|BRAHMANBARIA
+225130313|Chandpur Branch|CHANDPUR
+225130889|Hajiganj Branch|CHANDPUR
+225130913|Kachua Branch|CHANDPUR
+225150135|Agrabad Branch|CHATTOGRAM
+225150469|Andarkilla Branch|CHATTOGRAM
+225150948|Bandartila Branch|CHATTOGRAM
+225150980|National Special Economic Zone Branch|CHATTOGRAM
+225151226|Bhatiary Sme/Agri Branch|CHATTOGRAM
+225151934|Chawk Bazar Branch|CHATTOGRAM
+225152746|Fatikchhari Branch|CHATTOGRAM
+225153161|Halishahar Branch|CHATTOGRAM
+225153640|Jubilee Road Branch|CHATTOGRAM
+225153732|Kadamtali Branch|CHATTOGRAM
+225153916|Kalurghat Branch|CHATTOGRAM
+225154278|Khatungonj Branch|CHATTOGRAM
+225154678|Lohagara Sme/Agri Branch|CHATTOGRAM
+225155806|O.R. Nizam Road Branch|CHATTOGRAM
+225155877|Oxygen Moor Branch|CHATTOGRAM
+225155927|Pahartali Branch|CHATTOGRAM
+225156139|Patherhat Branch|CHATTOGRAM
+225156326|Prabartak Branch|CHATTOGRAM
+225157062|Satkania Branch|CHATTOGRAM
+225191060|Chauddagram Branch|CUMILLA
+225191152|Comilla Branch|CUMILLA
+225191549|Daulatganj Branch|CUMILLA
+225192119|Gouripur Branch|CUMILLA
+225220252|Cox'S Bazar Branch|COXS_BAZAR
+225260225|Ashulia Branch|DHAKA
+225260438|Banani Branch|DHAKA
+225260559|Bashundhara Branch|DHAKA
+225260638|Banani Lake View Branch|DHAKA
+225260991|Rokeya Sarani Branch|DHAKA
+225261174|Gulshan Women Branch|DHAKA
+225261187|Dhanmondi Branch|DHAKA
+225261279|Nikunja Branch|DHAKA
+225261729|Gulshan Branch|DHAKA
+225261732|Gulshan Avenue Branch|DHAKA
+225262531|Kawran Bazar Branch|DHAKA
+225262986|Mirpur Branch|DHAKA
+225263527|New Market Branch|DHAKA
+225263585|Pallabi Branch|DHAKA
+225263701|Progati Sarani Branch|DHAKA
+225264100|Savar Sme/Agri Branch|DHAKA
+225264300|Shaymoli Branch|DHAKA
+225264634|Uttara Branch|DHAKA
+225270349|Ati Bazar Branch|DHAKA
+225270431|B.B. Avenue Branch|DHAKA
+225271151|Ruhitpur Branch|DHAKA
+225271548|Motijheel Branch|DHAKA
+225272321|Foreign Exchange Branch|DHAKA
+225272800|Imamgonj Branch|DHAKA
+225272868|Islami Banking Branch|DHAKA
+225272989|Islampur Road Branch|DHAKA
+225273238|Jatrabari Branch|DHAKA
+225273254|Johnson Road Branch|DHAKA
+225273296|Joypara Sme/Agri Branch|DHAKA
+225273467|Kaliganj Branch|DHAKA
+225274187|Moghbazar Branch|DHAKA
+225274361|Mouchak Branch|DHAKA
+225274695|Nawabganj Branch|DHAKA
+225274729|Nawabpur Branch|DHAKA
+225275294|Posta Branch|DHAKA
+225275357|Principal Office Branch|DHAKA
+225275928|Sadarghat Branch|DHAKA
+225276798|Urdu Road Branch|DHAKA
+225276851|Vip Road Branch|DHAKA
+225277092|Zinzira Branch|DHAKA
+225280676|Dinajpur Branch|DINAJPUR
+225290040|Alfadanga Branch|FARIDPUR
+225290529|Faridpur Branch|FARIDPUR
+225290916|Kanaipur Bazar Branch|FARIDPUR
+225300527|Feni Branch|FENI
+225320581|Gobindaganj Branch|GAIBANDHA
+225330184|Bagher Bazar Branch|GAZIPUR
+225330526|Gazipur Branch|GAZIPUR
+225330539|Gazipur Sme/Agri Branch|GAZIPUR
+225331633|Tongi Branch|GAZIPUR
+225350377|Gopalganj Branch|GOPALGANJ
+225360620|Habiganj Sme/Agri Branch|HABIGANJ
+225390861|Jamalpur Sme/Agri Branch|JAMALPUR
+225410288|Benapole Branch|JASHORE
+225410941|Jessore Branch|JASHORE
+225471548|Khulna Branch|KHULNA
+225472147|Phultala Branch|KHULNA
+225480221|Bhairab Bazar Branch|KISHOREGANJ
+225480689|Kishoreganj Sme/Agri Branch|KISHOREGANJ
+225500943|Kushtia Branch|KUSHTIA
+225510191|Chandraganj Branch|LAKSHMIPUR
+225510733|Laxmipur Branch|LAKSHMIPUR
+225510975|Raipur Branch|LAKSHMIPUR
+225540761|Tekerhat Branch|MADARIPUR
+225560617|Manikgonj Branch|MANIKGANJ
+225580947|Kulaura Branch|MOULVIBAZAR
+225581188|Moulvibazar Branch|MOULVIBAZAR
+225581720|Sreemongal Branch|MOULVIBAZAR
+225591215|Rekabi Bazar Branch|MUNSHIGANJ
+225611753|Mymensingh Branch|MYMENSINGH
+225641181|Naogaon Branch|NAOGAON
+225670228|Bhulta Branch|NARAYANGANJ
+225671272|Netaiganj Branch|NARAYANGANJ
+225671306|Pagla Branch|NARAYANGANJ
+225671751|Narayanganj Branch|NARAYANGANJ
+225680676|Madhabdi Branch|NARSINGDI
+225680850|Narsingdi Branch|NARSINGDI
+225681309|Shibpur Branch|NARSINGDI
+225691115|Natore Sme/Agri Branch|NATORE
+225700251|Chapainawabgonj Branch|CHAPAI_NAWABGANJ
+225700880|Rohanpur Branch|CHAPAI_NAWABGANJ
+225730797|Saidpur Branch|NILPHAMARI
+225750672|Chawmuhani Branch|NOAKHALI
+225751213|Kabirhat Branch|NOAKHALI
+225751589|Maijdi Court Sme/Agri Branch|NOAKHALI
+225752083|Senbagh Branch|NOAKHALI
+225752359|Subarnachar Branch|NOAKHALI
+225761782|Pabna Branch|PABNA
+225781096|Patuakhali Branch|PATUAKHALI
+225811937|Rajshahi Branch|RAJSHAHI
+225851450|Rangpur Branch|RANGPUR
+225871098|Satkhira Branch|SATKHIRA
+225881875|Sirajganj Branch|SIRAJGANJ
+225900248|Chhatak Sme/Agri Branch|SUNAMGANJ
+225900493|Jagannathpur Branch|SUNAMGANJ
+225910041|Ambarkhana Branch|SYLHET
+225910317|Beani Bazar Branch|SYLHET
+225910438|Biswanath Branch|SYLHET
+225911303|Dhaka Dakshin Branch|SYLHET
+225913556|Bandar Bazar Branch|SYLHET
+225914155|Zindabazar Branch|SYLHET
+225932290|Tangail Branch|TANGAIL

@@ -1,0 +1,70 @@
+# source: https://www.bb.org.bd/en/index.php/links/links/9  (Bangladesh Bank — Scheduled Banks)
+# checked: 2026-09-04
+# count: 61
+# The regulator's own list. Authoritative for WHICH banks are scheduled and for
+# their exact current legal names — including the Companies Act change that
+# turned most "Limited" into "PLC". Branch lists still come from each bank's own
+# site; this settles identity and naming only.
+AB Bank PLC
+Agrani Bank PLC
+Al-Arafah Islami Bank PLC
+Bangladesh Commerce Bank Limited
+Bangladesh Development Bank PLC
+Bangladesh Krishi Bank
+Bank Al-Falah Limited
+Bank Asia PLC.
+BASIC Bank PLC. (Bangladesh Small Industries and Commerce Bank PLC.)
+Bengal Commercial Bank PLC.
+BRAC Bank PLC
+Citibank N.A
+Citizens Bank PLC
+City Bank PLC
+Commercial Bank of Ceylon Limited
+Community Bank Bangladesh PLC.
+Dhaka Bank PLC
+Dutch-Bangla Bank PLC
+Eastern Bank PLC
+Export Import Bank of Bangladesh PLC
+First Security Islami Bank PLC
+Global Islami Bank PLC
+Habib Bank Ltd.
+ICB Islamic Bank Ltd.
+IFIC Bank PLC
+Islami Bank Bangladesh PLC
+Jamuna Bank PLC
+Janata Bank PLC
+Meghna Bank PLC
+Mercantile Bank PLC
+Midland Bank Limited
+Modhumoti Bank PLC
+Mutual Trust Bank PLC
+Nagad Digital Bank PLC.
+National Bank of Pakistan
+National Bank PLC
+National Credit & Commerce Bank PLC
+NRB Bank PLC
+NRBC Bank PLC
+One Bank PLC
+Padma Bank PLC
+Prime Bank PLC
+Probashi Kollyan Bank
+Pubali Bank PLC
+Rajshahi Krishi Unnayan Bank
+Rupali Bank PLC
+Sammilito Islami Bank PLC
+SBAC Bank PLC
+Shahjalal Islami Bank PLC
+Shimanto Bank PLC
+Social Islami Bank PLC
+Sonali Bank PLC
+Southeast Bank PLC
+Standard Chartered Bank
+Standard Islami Bank PLC
+State Bank of India
+The Hong Kong and Shanghai Banking Corporation. Ltd.
+The Premier Bank PLC
+Trust Bank PLC
+Union Bank PLC
+United Commercial Bank PLC
+Uttara Bank PLC
+Woori Bank

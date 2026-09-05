@@ -1,0 +1,64 @@
+# source: https://icbislamic-bd.com/branches/
+# checked: 2026-09-05
+# name: ICB ISLAMIC BANK LTD.
+# branches: 33 (32 published + 1 retained)
+# ICB Islamic Bank Ltd. (230) — on Bangladesh Bank's scheduled-bank list.
+#
+# Its /branches page is a single labelled table — SL | Routing Number | Branch
+# Name | Address | ... — so the routing and the name are read from FIXED COLUMNS
+# OF THE SAME ROW (RULE 0), never matched across the page.
+#
+# The table is complete: SL runs 1..32 with no gap and the page has no pager, so
+# "not listed" here means the bank does not list it, rather than a page we only
+# partly read (the Shahjalal trap, where the bank's own page was a subset).
+#
+# The page carries 66 nine-digit runs but only 32 routings — the rest are
+# telephone/mobile numbers in their own columns. Reading the labelled Routing
+# Number column is what keeps those out.
+#
+# RETAINED vs the bank's list: 230910315 Beanibazar Branch is in our data but not
+# on the bank's page. It is KEPT, not deleted, per the policy already decided in
+# BANK-UNLISTED-10 (and applied to Pubali's 9 and Sonali's 1): deleting an open
+# branch makes an employee unpayable and orphans an account already saved against
+# it, while keeping a closed one only fails later at BEFTN validation, visibly,
+# and cannot misroute money because routing numbers are not reused.
+#
+# #1622 DELETED it, which contradicted that policy — the local demo DB having no
+# references says nothing about production. Restored by f1a3c86b45de.
+#
+# Districts are digits 4-5 confirmed against each row's address. Two codes are
+# ambiguous in our corpus and the address decides them: 27 (Dhaka vs Narayanganj)
+# is Dhaka for all nine, and 91 (Sherpur vs Sylhet) is Sylhet for both.
+230060281|Barisal Branch|Barishal
+230150133|Agrabad Branch|Chattogram
+230153648|Jubilee Road Branch|Chattogram
+230154276|Khatungonj Branch|Chattogram
+230155354|Muradpur Branch|Chattogram
+230260436|Banani Branch|Dhaka
+230261185|Dhanmondi Branch|Dhaka
+230261727|Gulshan Branch|Dhaka
+230262142|Mirpur Circle-10 Branch|Dhaka
+230262539|Kawran Bazar Branch|Dhaka
+230263075|New Market Branch|Dhaka
+230264632|Uttara Branch|Dhaka
+230270550|Babu Bazar Branch|Dhaka
+230270884|Bangshal Branch|Dhaka
+230272808|Imamgonj Branch|Dhaka
+230272987|Islampur Branch|Dhaka
+230274756|Dholaikhal Branch|Dhaka
+230275355|Principal Branch|Dhaka
+230276859|Kakrail Branch|Dhaka
+230300525|Feni Branch|Feni
+230360615|Habigonj Branch|Habiganj
+230410310|Benapole Branch|Jashore
+230410949|Jashore Branch|Jashore
+230411630|Noapara Branch|Jashore
+230471546|Khulna Branch|Khulna
+230581186|Moulavi Bazar Branch|Moulvibazar
+230641189|Naogaon Branch|Naogaon
+230671188|Narayangonj Branch|Narayanganj
+230680858|Narsingdi Branch|Narsingdi
+230811935|Rajshahi Branch|Rajshahi
+230910315|Beanibazar Branch|Sylhet
+230910465|Biswanath Branch|Sylhet
+230913554|Sylhet Branch|Sylhet

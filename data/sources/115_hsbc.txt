@@ -1,0 +1,40 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-05
+# name: THE HONG KONG AND SHANGHAI BANKING CORPORATION LTD.
+# branches: 16
+# THE HONG KONG AND SHANGHAI BANKING CORPORATION LTD. (115).
+#
+# ADDITIVE, AND NOT FROM THE BANK'S OWN SITE -- HSBC Bangladesh publishes branch
+# LOCATIONS, not BEFTN routing numbers. That was re-checked accounting for Bengali
+# numerals (RULE 0b) after Bangladesh Development Bank turned out to print its
+# routings that way; HSBC's pages carry none in either script.
+#
+# WHY THIS FILE EXISTS AT ALL: the foreign banks cannot be settled against
+# themselves, so the question is whether we are UNDER-COVERED -- the silent
+# failure that hid 691 missing branches elsewhere. Against the BACH table
+# (26.06.2025) six of the seven are EXACTLY covered: Standard Chartered 19/19,
+# Citibank 4/4, State Bank of India 6/6, Habib 7/7, National Bank of Pakistan 4/4,
+# Bank Al-Falah 7/7. HSBC was the only one short, by one branch:
+#   115611755  MYMENSINGH
+#
+# ENDPOINTS EXCLUDED (5): 115270004, 115270367, 115270383, 115270396, 115270783
+#
+# District 61 is MYMENSINGH, and the source's own district column says Mymensingh.
+# The 15 rows we already held keep the district labels they carry (CHITTAGONG
+# rather than CHATTOGRAM); the apply step canonicalises them.
+115150137|AGRABAD|CHITTAGONG
+115151965|CHITTAGONG BRANCH|CHITTAGONG
+115152951|GEC BRANCH|CHITTAGONG
+115260106|AMANAH|DHAKA
+115260430|BANANI BRANCH|DHAKA
+115260522|BARIDHARA BRANCH|DHAKA
+115261121|DHAKA MAIN BRANCH|DHAKA
+115261189|DHANMONDI BRANCH|DHAKA
+115261721|GULSHAN BRANCH|DHAKA
+115262988|MIRPUR|DHAKA
+115264636|UTTARA BRANCH|DHAKA
+115271274|CHAWK BAZAR|DHAKA
+115274242|MOTIJHEEL BRANCH|DHAKA
+115611755|MYMENSINGH|MYMENSINGH
+115671887|NARAYANGANJ BRANCH|NARAYANGANJ
+115913558|SYLHET BRANCH|SYLHET

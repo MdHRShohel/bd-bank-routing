@@ -1,0 +1,546 @@
+# source: https://www.pubalibangla.com/BranchInformation
+# checked: 2026-09-04
+# name: PUBALI BANK PLC
+# branches: 518
+# Read from the bank's own single-page branch list (no pagination): 509 routing
+# numbers, each paired with the branch name inside its own card. 24 of them are
+# AD branches whose card also carries a SWIFT code and so nests one level
+# deeper; those were read separately and are included.
+# Districts are DERIVED from routing digits 4-5 against our verified corpus --
+# the page prints an address, not a district field. All 509 resolve, all carry
+# the 175 prefix, and they span all 64 districts.
+# Added vs the scrape: 92 real branches we did not have at all.
+# Removed vs the scrape: TRUNCATION POINT 175270002 -- a BACH settlement
+# endpoint, not a branch anyone banks at.
+# RETAINED vs the bank's list: the 9 rows below are in our data but not on the
+# bank's locator. They are kept rather than deleted. Deleting an open branch
+# makes an employee unpayable and orphans an account already saved against it;
+# keeping a closed one only fails later at BEFTN validation, visibly, and cannot
+# misroute money because routing numbers are not reused. See BANK-UNLISTED-10.
+#   175100585  Chelopara Branch
+#   175153732  Kadamtali Branch
+#   175154544  Laldighi East Branch
+#   175270431  Bangabandhu Avenue Branch
+#   175300556  Feni Bazar Branch
+#   175472684  Upper Jessore Road Branch
+#   175610491  Charpara Branch
+#   175762110  Salgaria Branch
+#   175912744  Mohila College Branch
+175010075|Fakirhat Sub Branch|BAGERHAT
+175010941|Mongla Branch|BAGERHAT
+175030134|Bandarban Branch|BANDARBAN
+175040108|Bamna Branch|BARGUNA
+175040137|Taltoli Sub Branch|BARGUNA
+175060162|Dhamura Bazar Sub Branch|BARISHAL
+175060283|Choumatha Sub Branch|BARISHAL
+175060409|Harta Sub Branch|BARISHAL
+175060975|Hizla Branch|BARISHAL
+175061008|Hospital Road Branch|BARISHAL
+175061240|Madabpasha Branch|BARISHAL
+175061361|Mehendigonj Branch|BARISHAL
+175061453|Muladi Branch|BARISHAL
+175061990|Rupatoli Branch|BARISHAL
+175062173|Tarki Bandar Branch|BARISHAL
+175090103|Kunjerhat Sub Branch|BHOLA
+175090190|Borhanuddin Branch|BHOLA
+175090224|Dularhat Sub Branch|BHOLA
+175090703|Lalmohan Branch|BHOLA
+175100051|Murail Sme/Krishi Branch|BOGURA
+175100372|Sonatala Sub Branch|BOGURA
+175100585|Chelopara Branch|BOGURA
+175102417|Santahar Branch|BOGURA
+175102509|Satmatha Branch|BOGURA
+175102741|Sherpur Branch|BOGURA
+175103108|Dupchanchia Branch|BOGURA
+175120044|Akhaura Branch|BRAHMANBARIA
+175120107|Lalpur Bazar Sub Branch|BRAHMANBARIA
+175120431|Vadughor Sub Branch|BRAHMANBARIA
+175121098|Kuti Bazar Branch|BRAHMANBARIA
+175121669|Sarak Bazar Branch|BRAHMANBARIA
+175130076|Ashrafpur Bazar Branch|CHANDPUR
+175130139|Baburhat Branch|CHANDPUR
+175130434|Chandpur Puran Bazar Sub Branch|CHANDPUR
+175130492|Chhanger Char Branch|CHANDPUR
+175130797|Gridakalandia Bazar Branch|CHANDPUR
+175130889|Shahrasti Sub Branch|CHANDPUR
+175130913|Sachar Bazar Sub Branch|CHANDPUR
+175131217|Matlab Bazar Branch|CHANDPUR
+175131488|Natun Bazar Branch|CHANDPUR
+175131541|Nayergaon Bazar Branch|CHANDPUR
+175131754|Rampur Bazar Branch|CHANDPUR
+175150135|Agrabad Corporate Branch|CHATTOGRAM
+175150256|Chowdhury Hat Sub Branch|CHATTOGRAM
+175150469|Bakalia Access Road Sub Branch|CHATTOGRAM
+175150522|Battali Sub Branch|CHATTOGRAM
+175150643|Fokirnirhat Sub Branch|CHATTOGRAM
+175150793|Chandgaon Sub Branch|CHATTOGRAM
+175150977|Banskhali Branch|CHATTOGRAM
+175151097|Korerhat Sub Branch|CHATTOGRAM
+175151150|Nizampur Sub Branch|CHATTOGRAM
+175151242|Bibirhat Branch|CHATTOGRAM
+175151484|C.D.A Corporate Branch|CHATTOGRAM
+175151750|Chaktai Branch|CHATTOGRAM
+175151813|Chandanaish Branch|CHATTOGRAM
+175151934|Muradpur Sub Branch|CHATTOGRAM
+175152267|College Road Branch|CHATTOGRAM
+175152296|Colonel Hat Branch|CHATTOGRAM
+175152441|Sheikh Mujib Road Branch|CHATTOGRAM
+175152504|Dharmapur Branch|CHATTOGRAM
+175153132|Eastern Refinery Branch|CHATTOGRAM
+175153161|Halishahor Branch|CHATTOGRAM
+175153224|University Of Chittagong Sub Branch|CHATTOGRAM
+175153316|Industrial Area Branch|CHATTOGRAM
+175153732|Kadamtali Branch|CHATTOGRAM
+175154128|Katirhat Branch|CHATTOGRAM
+175154186|Keranihat Branch|CHATTOGRAM
+175154278|Khatungonj Branch|CHATTOGRAM
+175154399|Korbanigonj Branch|CHATTOGRAM
+175154423|Kulgaon Branch|CHATTOGRAM
+175154544|Laldighi East Branch|CHATTOGRAM
+175154665|Lohagara Branch|CHATTOGRAM
+175154757|Madunaghat Branch|CHATTOGRAM
+175154960|Mehdibagh Branch|CHATTOGRAM
+175155143|Mitachara Bazar Branch|CHATTOGRAM
+175155448|Nanupur Branch|CHATTOGRAM
+175155598|Nazirhat Branch|CHATTOGRAM
+175155772|Steel Mill Bazar Sub Branch|CHATTOGRAM
+175155835|Jubilee Road Branch|CHATTOGRAM
+175155893|Padua Branch|CHATTOGRAM
+175155927|Pahartoli Branch|CHATTOGRAM
+175156100|Patherghata Branch|CHATTOGRAM
+175156168|Patiya Branch|CHATTOGRAM
+175156221|Port Branch|CHATTOGRAM
+175156405|Rangunia Branch|CHATTOGRAM
+175156463|Ranirhat Branch|CHATTOGRAM
+175156492|Raozan Branch|CHATTOGRAM
+175156526|Reazuddin Bazar Branch|CHATTOGRAM
+175156739|Sadarghat Chattogram Branch|CHATTOGRAM
+175156797|Saltgola Sub Branch|CHATTOGRAM
+175156913|Sandwip Branch|CHATTOGRAM
+175157062|Satkania Branch|CHATTOGRAM
+175157246|Shantirhat Branch|CHATTOGRAM
+175157309|Shiberhat Branch|CHATTOGRAM
+175157404|Shitakundo Sme/Krishi Branch|CHATTOGRAM
+175157633|Terri Bazar Branch|CHATTOGRAM
+175180042|Alamdanga Branch|CHUADANGA
+175180071|Alukdia Branch|CHUADANGA
+175180192|Darshana Sub Branch|CHUADANGA
+175180855|Saratgonj Branch|CHUADANGA
+175190366|Bhuschi Bazar Branch|CUMILLA
+175190382|Gunabati Bazar Branch|CUMILLA
+175190403|Bangodda Bazar Branch|CUMILLA
+175190490|Barura Branch|CUMILLA
+175190766|Burichang Sub Branch|CUMILLA
+175190887|Nimsar Bazar Sub Branch|CUMILLA
+175190979|Chawk Bazar Branch|CUMILLA
+175191002|Cheora Branch|CUMILLA
+175191060|Chauddaagram Branch|CUMILLA
+175191394|Cumilla Main Branch|CUMILLA
+175191510|Eliotganj Bazar Sub Branch|CUMILLA
+175191549|Mudaforgonj Bazar Sub Branch|CUMILLA
+175191602|Debidwar Branch|CUMILLA
+175191781|Doulkhar Bazar Branch|CUMILLA
+175191815|Dollai Nowabpur Branch|CUMILLA
+175192148|Gouripur Bazar Branch|CUMILLA
+175192230|Homna Branch|CUMILLA
+175192827|Maynamati Branch|CUMILLA
+175192922|Meah Bazar Branch|CUMILLA
+175193400|Paduar Bazar Branch|CUMILLA
+175194159|Victoria College Branch|CUMILLA
+175194212|Zilla Parishad Branch|CUMILLA
+175220160|Pekua Sub Branch|COXS_BAZAR
+175220252|Ramu Sub Branch|COXS_BAZAR
+175220799|Moheshkhali Branch|COXS_BAZAR
+175220915|Teknaf Branch|COXS_BAZAR
+175220944|Ukhiya Branch|COXS_BAZAR
+175260070|Monipuripara Sub Branch|DHAKA
+175260162|Basila Sub Branch|DHAKA
+175260225|Ashulia Branch|DHAKA
+175260241|Sonargaon Janapath Branch|DHAKA
+175260346|Progati Sharani Branch|DHAKA
+175260438|Banani Branch|DHAKA
+175260520|Satarkul Sub Branch|DHAKA
+175260720|Merul Badda Sub Branch|DHAKA
+175260762|Darussalam Road Branch|DHAKA
+175260917|Dakshin Khan Branch|DHAKA
+175261103|Pirerbag Branch|DHAKA
+175261332|Elephant Road Branch|DHAKA
+175261453|Farmgate Branch|DHAKA
+175261495|Bolivodro Bazar Branch|DHAKA
+175261703|Ecb Chattar Branch|DHAKA
+175261758|Gulshan Circle-1 Branch|DHAKA
+175261840|Gulshan Corporate Branch|DHAKA
+175262207|International Airport Branch|DHAKA
+175262386|Kafrul Branch|DHAKA
+175262531|Kawranbazar Corporate Branch|DHAKA
+175262636|Kuril Bishwa Road Branch|DHAKA
+175262715|Laboratory Road Branch|DHAKA
+175262986|Mirpur Branch|DHAKA
+175263198|Mohakhali Corporate Branch|DHAKA
+175263280|Mohammadpur Branch|DHAKA
+175263527|New Market Branch|DHAKA
+175263585|Pallabi Branch|DHAKA
+175263619|Kalabagan Sub Branch|DHAKA
+175263914|Rampura Branch|DHAKA
+175263972|Ring Road Branch|DHAKA
+175264034|Dhanmondi Branch|DHAKA
+175264092|Savar Branch|DHAKA
+175264276|Shewrapara Branch|DHAKA
+175264397|Sonargaon Hotel Branch|DHAKA
+175264489|Tejgaon Branch|DHAKA
+175264692|Uttara Model Town Branch|DHAKA
+175270136|Zinzira Sub Branch|DHAKA
+175270349|Kalatia Bazar Sub Branch|DHAKA
+175270431|Bangabandhu Avenue Branch|DHAKA
+175270552|Babu Bazar Branch|DHAKA
+175270723|Ruhitpur Branch|DHAKA
+175270873|Hotel Intercontinental Branch|DHAKA
+175270886|Bangshal Branch|DHAKA
+175270949|Bar Library Branch|DHAKA
+175270978|Nandipara Sub Branch|DHAKA
+175271069|Begum Bazar Branch|DHAKA
+175271272|Chawk Bazar Branch|DHAKA
+175271427|Rayerbag Sub Branch|DHAKA
+175271601|Railway Station Branch|DHAKA
+175271698|Dhaka Stadium Corporate Branch|DHAKA
+175271872|Dholaipar Branch|DHAKA
+175272200|Fakirapool Bazar Branch|DHAKA
+175272321|Foreign Exchange Branch|DHAKA
+175272505|Khilgaon Branch|DHAKA
+175272563|Hasnabad Branch|DHAKA
+175272747|Hotel Osmani Intl Branch|DHAKA
+175272800|Imamgonj Branch|DHAKA
+175272989|Islampur Branch|DHAKA
+175273254|National Medical Sub Branch|DHAKA
+175273317|Jurain (Urban) Branch|DHAKA
+175273588|Kamrangirchar Branch|DHAKA
+175273733|Komorgonj Branch|DHAKA
+175273746|Konapara Branch|DHAKA
+175273946|Malibagh Branch|DHAKA
+175274158|Moghaltully Branch|DHAKA
+175274187|Moghbazar Branch|DHAKA
+175274240|Motijheel Corporate Branch|DHAKA
+175274345|Shipahibagh Bazar Branch|DHAKA
+175274758|Nawabpur Road Branch|DHAKA
+175274811|Naya Bazar Branch|DHAKA
+175274879|Nayapaltan Branch|DHAKA
+175274932|Nazimuddin Road Branch|DHAKA
+175275265|Peelkhana Branch|DHAKA
+175275357|Principal Branch|DHAKA
+175275478|R.K. Mission Road Branch|DHAKA
+175275928|Sadarghat Branch|DHAKA
+175276222|Shahbag Avenue Branch|DHAKA
+175276343|Shantinagar Branch|DHAKA
+175276464|Shishu Park Branch|DHAKA
+175276585|Sonargaon Road Branch|DHAKA
+175276648|Sutrapur Branch|DHAKA
+175280342|Birampur Branch|DINAJPUR
+175280371|Kaharol Sub Branch|DINAJPUR
+175280676|Setabgonj Sub Branch|DINAJPUR
+175281817|Parbotipur Branch|DINAJPUR
+175281875|Ranigonj Sub Branch|DINAJPUR
+175281938|Pulhat(Urban) Branch|DINAJPUR
+175290282|Nagarkanda Sub Branch|FARIDPUR
+175290345|Rupapat Sub Branch|FARIDPUR
+175290529|Faridpur Medical College And Hospital Sub Branch|FARIDPUR
+175290916|Kanaipur Branch|FARIDPUR
+175291094|Modhukhali Branch|FARIDPUR
+175291278|Sadarpur (Rural) Branch|FARIDPUR
+175300222|Bangla Bazar Branch|FENI
+175300314|Chhagolnaya Branch|FENI
+175300372|Dagon Bhuiyan Branch|FENI
+175300527|Mohipal Sub Branch|FENI
+175300556|Feni Bazar Branch|FENI
+175300619|Porshuram Sub Branch|FENI
+175300851|Kazirhat Branch|FENI
+175301005|Lemua Bazar Branch|FENI
+175301489|Sonagazi Branch|FENI
+175320523|Sadullapur Sub Branch|GAIBANDHA
+175320581|Gobindagonj Branch|GAIBANDHA
+175320978|Mohimagonj Branch|GAIBANDHA
+175321151|Park Road Branch|GAIBANDHA
+175321306|Sundarganj Branch|GAIBANDHA
+175330171|Salna Branch|GAZIPUR
+175330221|Board Bazar Branch|GAZIPUR
+175330526|Gazipur Branch|GAZIPUR
+175330739|Joydevpur Branch|GAZIPUR
+175330821|Kaligonj Branch|GAZIPUR
+175330889|Kapasia Branch|GAZIPUR
+175330913|Kashimpur Branch|GAZIPUR
+175331004|Mawna Branch|GAZIPUR
+175331633|Tongi Bazar Sub Branch|GAZIPUR
+175350377|Kotalipara Sub Branch|GOPALGANJ
+175350580|Kashiani Branch|GOPALGANJ
+175350735|Muksudpur Branch|GOPALGANJ
+175360017|Putijuri Branch|HABIGANJ
+175360046|Ajmirigonj Branch|HABIGANJ
+175360059|Olipur Bazar Branch|HABIGANJ
+175360167|Baniachong Branch|HABIGANJ
+175360196|Bar Library Branch|HABIGANJ
+175360341|Chunarughat Branch|HABIGANJ
+175360370|Dharmaghar Branch|HABIGANJ
+175360462|Gazipur Branch|HABIGANJ
+175360491|Gajnaipur Branch|HABIGANJ
+175360583|Guninganj Bazar Branch|HABIGANJ
+175360617|Habigonj Branch|HABIGANJ
+175360888|Madhabpur Branch|HABIGANJ
+175361003|Mirpur Bazar Branch|HABIGANJ
+175361090|Nabigonj Branch|HABIGANJ
+175361395|Station Road Sub Branch|HABIGANJ
+175361474|Razar Bazar (Rural) Branch|HABIGANJ
+175361487|Sutang Bazar Branch|HABIGANJ
+175361511|Syedpur Bazar Branch|HABIGANJ
+175361579|Town Masjid Road Branch|HABIGANJ
+175380376|Jamalgonj Branch|JOYPURHAT
+175380400|Panchbibi Sub Branch|JOYPURHAT
+175390166|Bokshiganj Sub Branch|JAMALPUR
+175390182|Melandah Bazar Branch|JAMALPUR
+175390858|Jamalpur Branch|JAMALPUR
+175391307|Nandina Bazar Branch|JAMALPUR
+175391486|Sarishabari Branch|JAMALPUR
+175410112|Bscic Branch|JASHORE
+175410288|Benapole Branch|JASHORE
+175410554|Chowgacha Branch|JASHORE
+175410941|New Market Sub Branch|JASHORE
+175411511|Monirampur Branch|JASHORE
+175411616|Navaran Bazar Branch|JASHORE
+175411661|Noapara Bazar Branch|JASHORE
+175420315|Jhalakati Branch|JHALOKATI
+175420494|Nalcity Branch|JHALOKATI
+175420557|Rajapur Branch|JHALOKATI
+175440645|Kotchandpur Sub Branch|JHENAIDAH
+175441181|Shailkupa Branch|JHENAIDAH
+175460070|Panchari Sub Branch|KHAGRACHHARI
+175470310|Chalna Sub Branch|KHULNA
+175470552|Paikgacha Sub Branch|KHULNA
+175470707|Daulatpur Branch|KHULNA
+175470873|Phultala Branch|KHULNA
+175471335|Kayer Bazar Branch|KHULNA
+175471456|Khalishpur Branch|KHULNA
+175471722|Khulna Branch|KHULNA
+175471872|Mirerdanga Branch|KHULNA
+175472471|Sheikhpara Bazar Branch|KHULNA
+175472684|Upper Jessore Road Branch|KHULNA
+175480221|Bhairab Bazar Branch|KISHOREGANJ
+175480526|Kamalpur Branch|KISHOREGANJ
+175480584|Kathiadi (Urban) Branch|KISHOREGANJ
+175480676|Tarail Sub Branch|KISHOREGANJ
+175490190|Fulbari Branch|KURIGRAM
+175490408|Kurigram Branch|KURIGRAM
+175490466|Nageshwari Branch|KURIGRAM
+175490703|Ulipur Branch|KURIGRAM
+175500280|Taragunia Sub Branch|KUSHTIA
+175500880|Kumarkhali Branch|KUSHTIA
+175500943|Mirpur Sub Branch|KUSHTIA
+175501368|Poradah Branch|KUSHTIA
+175510733|Poddar Bazar Sub Branch|LAKSHMIPUR
+175510854|Mirerhat Branch|LAKSHMIPUR
+175510975|Rakhalia Bazar Sub Branch|LAKSHMIPUR
+175511037|Ramgonj Branch|LAKSHMIPUR
+175520460|Lalmonirhat Branch|LALMONIRHAT
+175520707|Tushbhander Branch|LALMONIRHAT
+175540408|Mostafapur Sub Branch|MADARIPUR
+175540703|Shibchar Branch|MADARIPUR
+175540761|Tekerhat Branch|MADARIPUR
+175550551|Mohammadpur Sub Branch|MAGURA
+175560288|Daulatpur Branch|MANIKGANJ
+175560617|Manikgonj Branch|MANIKGANJ
+175560820|Singair Branch|MANIKGANJ
+175570373|Meherpur Branch|MEHERPUR
+175580042|Adampur Bazar Branch|MOULVIBAZAR
+175580068|Bhatera Bazar Branch|MOULVIBAZAR
+175580105|Baralekha Branch|MOULVIBAZAR
+175580255|Brahman Bazar Branch|MOULVIBAZAR
+175580376|Chowmuhana Branch|MOULVIBAZAR
+175580439|Dakshinbagh Branch|MOULVIBAZAR
+175580497|Rabir Bazar Branch|MOULVIBAZAR
+175580655|Jogidahar Branch|MOULVIBAZAR
+175580671|Juri Branch|MOULVIBAZAR
+175580763|Munshibazar Sub Branch|MOULVIBAZAR
+175580947|Kulaura Branch|MOULVIBAZAR
+175581188|Moulvibazar Branch|MOULVIBAZAR
+175581241|Munshi Bazar Branch|MOULVIBAZAR
+175581609|Shamshernagar Branch|MOULVIBAZAR
+175581667|Sherpur Bazar Branch|MOULVIBAZAR
+175581720|Sreemongal Branch|MOULVIBAZAR
+175581788|Tengra Bazar Branch|MOULVIBAZAR
+175581841|Wapda Gate Branch|MOULVIBAZAR
+175590287|Sonargaon Sub Branch|MUNSHIGANJ
+175590379|Sipahipara Sub Branch|MUNSHIGANJ
+175590461|Gazaria Branch|MUNSHIGANJ
+175590766|Aldi Bazar Branch|MUNSHIGANJ
+175591031|Munshigonj Branch|MUNSHIGANJ
+175591099|Naopara Branch|MUNSHIGANJ
+175591123|Nurpur Branch|MUNSHIGANJ
+175591431|Sreenagar Bazar (Rural) Branch|MUNSHIGANJ
+175610312|Bhaluka Branch|MYMENSINGH
+175610491|Charpara Branch|MYMENSINGH
+175610646|Trishal Branch|MYMENSINGH
+175610941|Fulbaria Branch|MYMENSINGH
+175611182|Iswarganj Branch|MYMENSINGH
+175611690|Muktagacha Branch|MYMENSINGH
+175611845|Shyamgonj Sub Branch|MYMENSINGH
+175612202|Swadeshi Bazar Branch|MYMENSINGH
+175612231|Taltala Bazar Branch|MYMENSINGH
+175612415|University Campus Branch|MYMENSINGH
+175640058|Proshadpur Sub Branch|NAOGAON
+175641099|Nazipur Sub Branch|NAOGAON
+175641181|Naogaon Branch|NAOGAON
+175641752|Sapahar Branch|NAOGAON
+175650648|Rupganj Bazar Sub Branch|NARAIL
+175670044|Araihazar Branch|NARAYANGANJ
+175670228|Bhulta Branch|NARAYANGANJ
+175670499|Duptara Branch|NARAYANGANJ
+175670523|Fatullah Branch|NARAYANGANJ
+175670736|Kalirbazar Branch|NARAYANGANJ
+175671180|Narayanganj Branch|NARAYANGANJ
+175671272|Netaigonj (Urban) Branch|NARAYANGANJ
+175671551|Shibu Market Branch|NARAYANGANJ
+175671601|Siddirgonj Branch|NARAYANGANJ
+175671751|Tanbazar Branch|NARAYANGANJ
+175680250|Belabo Branch|NARSINGDI
+175680342|Charsindur Branch|NARSINGDI
+175680492|Ghorashal Branch|NARSINGDI
+175680676|Madhabdi Branch|NARSINGDI
+175680739|Monohardi Branch|NARSINGDI
+175680850|Shibpur Sub Branch|NARSINGDI
+175680913|Palash Branch|NARSINGDI
+175681091|Raipura Branch|NARSINGDI
+175690853|Kushumbi Kaligonj Branch|NATORE
+175691094|Singra Sub Branch|NATORE
+175700251|Shibgonj Sub Branch|CHAPAI_NAWABGANJ
+175700648|Maharajpur Branch|CHAPAI_NAWABGANJ
+175700880|Rohanpur Branch|CHAPAI_NAWABGANJ
+175720615|Madan Branch|NETROKONA
+175720673|Mohangonj (Urban) Branch|NETROKONA
+175720736|Netrakona Branch|NETROKONA
+175730050|Shutibari (Rural) Branch|NILPHAMARI
+175730739|Pakerhat Sub Branch|NILPHAMARI
+175730797|Saidpur Branch|NILPHAMARI
+175750043|Jahajmara Sub Branch|NOAKHALI
+175750256|Bhuiyarhat Sub-Branch|NOAKHALI
+175750430|Chaprashirhat Branch|NOAKHALI
+175750580|Chatkhil Branch|NOAKHALI
+175750672|Eklashpur Bazar Sub Branch|NOAKHALI
+175750793|Datter Hat Branch|NOAKHALI
+175751547|Maijdee Bazar Branch|NOAKHALI
+175751576|Maijdee Court Branch|NOAKHALI
+175751992|Samir Munshirhat Branch|NOAKHALI
+175752425|Thanarhat Bazar Sub Branch|NOAKHALI
+175760220|Kashinathpur Sub Branch|PABNA
+175760462|Bera Branch|PABNA
+175760491|Bhangura Branch|PABNA
+175761216|Ishurdi Branch|PABNA
+175761458|Tebunia Branch|PABNA
+175761782|Sujanagar Sub Branch|PABNA
+175762110|Salgaria Branch|PABNA
+175770557|Tetulia Sub Branch|PANCHAGARH
+175780347|Dashmina Branch|PATUAKHALI
+175780497|Rangabali Sub Branch|PATUAKHALI
+175780521|Kalapara Branch|PATUAKHALI
+175780589|Kalaiya Bandar Branch|PATUAKHALI
+175781096|Patuakhali Branch|PATUAKHALI
+175781270|Subidkhali Branch|PATUAKHALI
+175790137|Kathalia Sub Branch|PIROJPUR
+175790524|Tushkhali Sub Branch|PIROJPUR
+175790582|Mearhat Branch|PIROJPUR
+175790708|Nazirpur Branch|PIROJPUR
+175790766|Pirojpur Branch|PIROJPUR
+175790858|Sarsina Branch|PIROJPUR
+175810059|Godagari Sub Branch|RAJSHAHI
+175810109|Bagha Branch|RAJSHAHI
+175810220|Puthia Sub Branch|RAJSHAHI
+175810341|Bhawanigonj Branch|RAJSHAHI
+175811366|Katakhali Bazar Branch|RAJSHAHI
+175811632|New Market, Rajshahi Branch|RAJSHAHI
+175811937|Tanore Sub Branch|RAJSHAHI
+175812231|Sericulture Branch|RAJSHAHI
+175820681|Sonapur Sub Branch|RAJBARI
+175820731|Rajbari Branch|RAJBARI
+175840524|Rangamati Branch|RANGAMATI
+175850051|Dhap Branch|RANGPUR
+175850064|Shathibari Branch|RANGPUR
+175851450|Taragonj Sub Branch|RANGPUR
+175851755|Shapla Chattar Branch|RANGPUR
+175851876|Station Road Branch|RANGPUR
+175860591|Bhojeshwar Bazar Branch|SHARIATPUR
+175860670|Shariatpur Town Branch|SHARIATPUR
+175870581|Kalaroa Branch|SATKHIRA
+175871030|Tala Sub Branch|SATKHIRA
+175871098|Satkhira Branch|SATKHIRA
+175880434|Chandaikona Branch|SIRAJGANJ
+175881125|Khamargram Branch|SIRAJGANJ
+175881875|Sirajgonj Branch|SIRAJGANJ
+175882179|Tarash Branch|SIRAJGANJ
+175882232|Ullapara Branch|SIRAJGANJ
+175890587|Sherpur Town Branch|SHERPUR
+175900222|Chhatak Bazar Sub Branch|SUNAMGANJ
+175900251|Derai Branch|SUNAMGANJ
+175900435|Gobindagonj Branch|SUNAMGANJ
+175900493|Jagannathpur Branch|SUNAMGANJ
+175900527|Sachna Bazar Sub Branch|SUNAMGANJ
+175900822|Pagla Bazar Branch|SUNAMGANJ
+175900972|Rasulgonj Branch|SUNAMGANJ
+175901092|Mirpur Bazar Branch|SUNAMGANJ
+175901126|Tahirpur Sub Branch|SUNAMGANJ
+175901247|Jawa Bazar Branch|SUNAMGANJ
+175910083|Tuker Bazar Branch|SYLHET
+175910104|Asirgonj Bazar Branch|SYLHET
+175910162|Balagonj Branch|SYLHET
+175910191|Bondar Bazar Branch|SYLHET
+175910254|Baraikandi Branch|SYLHET
+175910283|Baroigram Bazar Branch|SYLHET
+175910317|Beani Bazar Branch|SYLHET
+175910438|Biswanath Branch|SYLHET
+175910559|Budhbari Bazar Branch|SYLHET
+175910670|Chandarpur Bazar Branch|SYLHET
+175910825|Mogla Bazar Sub Branch|SYLHET
+175910883|Chowkidekhi Branch|SYLHET
+175910917|Companigonj Branch|SYLHET
+175911008|Jaintiapur Sub Branch|SYLHET
+175911037|Dargagate Branch|SYLHET
+175911158|Daspaika Bazar Branch|SYLHET
+175911303|Dhaka Dakshin Branch|SYLHET
+175911361|Fenchuganj Branch|SYLHET
+175911516|Gachhbari Branch|SYLHET
+175911545|Goalabazar Branch|SYLHET
+175911608|Golapgonj Branch|SYLHET
+175911666|Gowainghat Branch|SYLHET
+175911758|Hetimgonj Branch|SYLHET
+175911866|Jalalpur Branch|SYLHET
+175911903|Kadamtali Branch|SYLHET
+175911990|Sonasar Bazar Sub Branch|SYLHET
+175912023|Kalighat Road Branch|SYLHET
+175912081|Kanaighat Branch|SYLHET
+175912478|Lalabazar Branch|SYLHET
+175912623|Mirgonj Bazar Branch|SYLHET
+175912744|Mohila College Branch|SYLHET
+175912773|Mokam Bazar Branch|SYLHET
+175912865|Pathantula Branch|SYLHET
+175913130|Shahparan Gate Branch|SYLHET
+175913219|Shahgali Bazar Branch|SYLHET
+175913222|Shahi Eidgah Branch|SYLHET
+175913251|Shahjalal Upashahar Branch|SYLHET
+175913406|Shibgonj Branch|SYLHET
+175913435|Singerkatch Bazar Branch|SYLHET
+175913464|Station Road Branch|SYLHET
+175913701|Stadium Branch|SYLHET
+175913798|Sylhet Branch|SYLHET
+175913822|Tajpur Branch|SYLHET
+175913880|Technical Road Branch|SYLHET
+175914126|Zakigonj Branch|SYLHET
+175930050|Madhupur Sub Branch|TANGAIL
+175930076|Bhuapur Sub Branch|TANGAIL
+175931004|Gopalpur Branch|TANGAIL
+175931033|Gorai Branch|TANGAIL
+175931309|Kalihati Branch|TANGAIL
+175931367|Mirzapur Sub Branch|TANGAIL
+175931909|Pakutia Branch|TANGAIL
+175931967|Pathrail Bazar Branch|TANGAIL
+175932203|Sakhipur Branch|TANGAIL
+175932353|Tangail Main Branch|TANGAIL
+175932445|Zilla Sarak Branch|TANGAIL
+175940732|Nekmorod Branch|THAKURGAON
+175940761|Pirganj Branch|THAKURGAON
+175940974|Thakurgaon Branch|THAKURGAON
+175941007|Thakurgaon Road Branch|THAKURGAON

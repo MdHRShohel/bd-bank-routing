@@ -1,0 +1,20 @@
+# source: https://www.bb.org.bd/en/index.php/links/links/9
+# checked: 2026-09-06
+# name: OFFICE OF THE CONTROLLER GENERAL  OF ACCOUNTS
+# branches: 11
+# payable: false
+# payable-reason: OFFICE OF THE CONTROLLER GENERAL OF ACCOUNTS is a government accounting office, not a bank; its rows are ministry accounting units such as POSTAL and PRIME MINISTER OFFICE.
+# A SALARY CANNOT BE PAID INTO ANY OF THESE. They are included so a lookup on
+# one of their routing numbers returns an answer rather than nothing -- and so
+# a consumer can refuse to OFFER them, which is the mistake this exists to stop.
+405000018|PRIME MINISTER OFFICE|NA
+405000021|HEALTH AND POPULATION CONTROL|NA
+405000034|HOME AFFAIRS|NA
+405000047|INFORMATION|NA
+405000050|INDUSTRIES|NA
+405000063|SOCIAL WELFARE|NA
+405000076|FISHERIES AND LIVESTOCK|NA
+405000089|POSTAL|NA
+405000092|T AND T|NA
+405000100|ROADS AND ROAD COMMUNICATION|NA
+405270006|TRUNCATION POINT|DHAKA

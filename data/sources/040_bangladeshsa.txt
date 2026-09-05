@@ -1,0 +1,11 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-06
+# name: BANGLADESH SAMABAYA BANK LTD
+# branches: 1
+# BANGLADESH SAMABAYA BANK LTD (040).
+# NOT FROM THE BANK'S OWN SITE. This bank publishes branch LOCATIONS but no
+# BEFTN routing numbers, so it cannot be settled against itself. Taken from the
+# consolidated BACH routing table (26.06.2025) published by Dhaka Bank PLC.
+# A snapshot: never authority for a branch being ABSENT.
+# Settlement endpoints excluded (1): 040270003
+040271510|BANK LTD. DHAKA-SOUTH DHAKA|DHAKA

@@ -1,0 +1,46 @@
+# source: https://www.midlandbankbd.net/branches
+# checked: 2026-09-04
+# name: MIDLAND BANK PLC
+# branches: 42
+285270134|Aganagar Branch|Dhaka
+285260210|Banani Branch|Dhaka
+285261185|Dhanmondi Branch|Dhaka
+285271933|Dilkusha Corporate Branch|Dhaka
+285670521|Fatullah Branch|Narayanganj
+285330524|Gazipur Branch|Gazipur
+285261727|Gulshan Branch|Dhaka
+285262050|Hemayetpur Branch|Dhaka
+285272987|Islampur Branch|Dhaka
+285261514|Kamarpara Branch|Dhaka
+285480582|Katiadi Branch|Kishoreganj
+285262539|Kawran Bazar Branch|Dhaka
+285291126|Maligram Branch|Faridpur
+285262984|Mirpur Branch|Dhaka
+285330111|Mirzapur Bazar Branch|Gazipur
+285671188|Narayanganj Branch|Narayanganj
+285680858|Narshingdi Branch|Narsingdi
+285540064|Panchar Branch|Madaripur
+285671391|Panchrukhi Branch|Narayanganj
+285270150|Paragram Branch|Dhaka
+285264632|Uttara Branch|Dhaka
+285264816|Zirabo Branch|Dhaka
+285150133|Agrabad Branch|Chattogram
+285300141|Bokhter Munshi Bazar Branch|Feni
+285151482|CDA Avenue Branch|Chattogram
+285510199|Chandraganj Branch|Lakshmipur
+285152173|Chowdhuryhat Branch|Chattogram
+285510407|Dalal Bazar Branch|Lakshmipur
+285193853|Shashongacha Branch|Cumilla
+285750270|Sompara Bazar|Noakhali
+285100370|Bogura Branch|Bogura
+285101937|Mokamtola Branch|Bogura
+285811935|Rajshahi Branch|Rajshahi
+285500288|Bheramara Branch|Kushtia
+285010110|Foyla Bazar Branch|Bagerhat
+285410949|Jashore Branch|Jashore
+285471546|Khulna Branch|Khulna
+285060281|Barishal Branch|Barishal
+285913554|Sylhet Branch|Sylhet
+285610310|Valuka Branch|Mymensingh
+285280124|Doshmile Branch|Dinajpur
+285851458|Rangpur Branch|Rangpur

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bd-bank-routing — Bangladesh bank routing number lookup &amp; dataset</title>
+<meta name="description" content="Look up any Bangladesh bank routing number, or check that the one you store is real, payable, and actually belongs to the bank named beside it. 63 institutions, 11,426 branches, every row traceable to the page it was read from.">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://mdhrshohel.github.io/bd-bank-routing/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="bd-bank-routing — Bangladesh bank routing numbers, with the receipts">
+<meta property="og:description" content="Look up a BEFTN routing number, or check the one you already store. 63 institutions, 11,426 branches, sourced per bank.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f172a'/><circle cx='16' cy='16' r='6' fill='%2322c55e'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Inline and before the body so a stored choice never flashes the other theme.
+  try {
+    var saved = localStorage.getItem("bdbr-theme");
+    if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
+  } catch (e) { /* private mode: fall back to the system preference */ }
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark plain" href="#top"><span class="dot" aria-hidden="true"></span>bd-bank-routing</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#lookup">Lookup</a>
+      <a href="#catches" class="hide-sm">What it catches</a>
+      <a href="#banks">Banks</a>
+      <a href="#provenance" class="hide-sm">Provenance</a>
+      <a href="#install" class="hide-xs">Install</a>
+      <button type="button" class="theme" id="theme-toggle" aria-label="Switch to light theme">
+        <svg class="moon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.3 12.9A7.5 7.5 0 0 1 7.1 2.7a7.5 7.5 0 1 0 10.2 10.2Z"/></svg>
+        <svg class="sun" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 3.5a1 1 0 0 1-1-1V1.5a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1Zm0 13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1ZM3.5 10a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm15 0a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM5.05 5.05a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.7a1 1 0 0 1 0 1.42Zm11.02 11.02a1 1 0 0 1-1.42 0l-.7-.71a1 1 0 0 1 1.41-1.41l.71.7a1 1 0 0 1 0 1.42ZM5.05 14.95a1 1 0 0 1 0 1.42l-.71.7a1 1 0 0 1-1.41-1.41l.7-.71a1 1 0 0 1 1.42 0Zm11.02-11.02a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.7-.71a1 1 0 0 1 1.42 0ZM10 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg>
+      </button>
+      <a class="gh" href="https://github.com/MdHRShohel/bd-bank-routing" aria-label="Source on GitHub">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.95-.82-1.14-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Bangladesh · BEFTN</p>
+    <h1>Bank routing numbers, <span class="hl">with the receipts</span>.</h1>
+    <p class="deck">
+      Look up any BD routing number — or check that the one you already store is real,
+      payable, and actually belongs to the bank whose name sits next to it. Every row
+      here is traceable to the page it was read from and the date it was read.
+    </p>
+    <dl class="stats" id="stats">
+      <div><dt>Institutions</dt><dd class="num" data-stat="banks">—</dd></div>
+      <div><dt>Branches</dt><dd class="num" data-stat="branches">—</dd></div>
+      <div><dt>Districts</dt><dd class="num" data-stat="districts">—</dd></div>
+      <div><dt>Read from the bank itself</dt><dd class="num" data-stat="firstParty">—</dd></div>
+      <div><dt>Dataset</dt><dd class="num" data-stat="generated">—</dd></div>
+    </dl>
+  </div>
+</div>
+
+<section id="lookup" aria-labelledby="lookup-h">
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Lookup</p>
+      <h2 id="lookup-h">Resolve a routing number, or find a branch</h2>
+      <p>
+        A BD routing number is not an opaque token stored beside a bank name — it
+        <em>is</em> the bank and the district. Type nine digits and watch it come apart.
+      </p>
+    </header>
+
+    <div class="lookup">
+      <form class="lookup__form" id="lookup-form" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="q">Routing number, or a bank / branch name</label>
+          <input id="q" name="q" type="search" inputmode="numeric" spellcheck="false"
+                 placeholder="225150135  ·  or  “Agrabad”" enterkeyhint="search"
+                 aria-describedby="q-help">
+          <p class="help" id="q-help">Nine digits resolves a branch. Letters search 11,426 branch names.</p>
+        </div>
+        <div class="field">
+          <label for="stored">Bank name on your record <span class="sr-only">(optional)</span></label>
+          <input id="stored" name="stored" type="text" spellcheck="false"
+                 placeholder="Citibank N.A" aria-describedby="stored-help">
+          <p class="help" id="stored-help">Optional. We say so if it disagrees with the routing.</p>
+        </div>
+      </form>
+
+      <div class="examples">
+        <span class="eyebrow">Try</span>
+        <button type="button" class="chip" data-q="225150135" data-stored="Citibank N.A">A name that disagrees</button>
+        <button type="button" class="chip" data-q="025150001">Not a branch at all</button>
+        <button type="button" class="chip" data-q="405000018">Nobody banks there</button>
+        <button type="button" class="chip" data-q="215761333">A prefix that is not its bank</button>
+        <button type="button" class="chip" data-q="Agrabad">A branch by name</button>
+      </div>
+
+      <div class="anatomy" id="anatomy" aria-hidden="true">
+        <div class="seg seg--bank"><b data-seg="bank">···</b><small>Bank</small><em data-label="bank">digits 1–3</em></div>
+        <div class="seg seg--dist"><b data-seg="dist">··</b><small>District</small><em data-label="dist">digits 4–5</em></div>
+        <div class="seg seg--branch"><b data-seg="branch">···</b><small>Branch</small><em data-label="branch">digits 6–8</em></div>
+        <div class="seg seg--check"><b data-seg="check">·</b><small>Check</small><em data-label="check">digit 9</em></div>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="catches" aria-labelledby="catches-h">
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Why a lookup is the boring part</p>
+      <h2 id="catches-h">What it catches</h2>
+      <p>Each of these reached a live payroll product before it was found. Every example below runs in the box above.</p>
+    </header>
+    <div class="catches">
+      <article class="catch">
+        <h3>The name disagrees with the routing</h3>
+        <p>A record read <code>CITIBANK N.A</code>; the employee banked at <code>CITY BANK PLC</code>. Two banks, four characters apart. The first three digits settle it — nobody else would have.</p>
+        <button type="button" class="try" data-q="225150135" data-stored="Citibank N.A">Run 225150135</button>
+      </article>
+      <article class="catch">
+        <h3>It is not a branch at all</h3>
+        <p><code>TRUNCATION POINT</code>, <code>RTGS-*</code>, <code>CLEARING HOUSE</code>, <code>AGENT BANKING</code> sit in the official table and look exactly like branches in a dropdown. A salary cannot be paid into any of them. 96 were selectable.</p>
+        <button type="button" class="try" data-q="025150001">Run 025150001</button>
+      </article>
+      <article class="catch">
+        <h3>The institution takes no salaries</h3>
+        <p>Bangladesh Bank's clearing points and the Controller General of Accounts' ministry units are real routing numbers nobody holds an account at. Carried here, flagged, so a lookup answers instead of shrugging.</p>
+        <button type="button" class="try" data-q="405000018">Run 405000018</button>
+      </article>
+      <article class="catch">
+        <h3>A bank publishing another bank's prefix</h3>
+        <p>UCB's own locator prints <code>215761333</code> for its Kashinathpur branch. <code>215</code> is Standard Chartered. The district digits are right, so the branch is real and only the prefix is wrong — and the obvious repair appears in no source, so it is not here.</p>
+        <button type="button" class="try" data-q="215761333">Run 215761333</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="banks" aria-labelledby="banks-h">
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Coverage</p>
+      <h2 id="banks-h">Every institution, and where its rows came from</h2>
+      <p>Select a row to list its branches. Two banks are carried but flagged unpayable — they are real routing numbers that no salary can reach.</p>
+    </header>
+
+    <div class="table-tools">
+      <div class="field">
+        <label for="bank-filter">Filter banks</label>
+        <input id="bank-filter" type="search" spellcheck="false" placeholder="name or 3-digit code">
+      </div>
+      <p class="count-note" id="bank-count" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="table-scroll">
+      <table id="banks-table">
+        <caption>Sorted by routing prefix. Select any row to expand its branches.</caption>
+        <thead>
+          <tr>
+            <th scope="col" aria-sort="ascending"><button type="button" data-sort="code">Code <span class="arrow" aria-hidden="true">↑</span></button></th>
+            <th scope="col"><button type="button" data-sort="name">Institution <span class="arrow" aria-hidden="true">↑</span></button></th>
+            <th scope="col" class="num"><button type="button" data-sort="branchCount">Branches <span class="arrow" aria-hidden="true">↑</span></button></th>
+            <th scope="col" class="num"><button type="button" data-sort="districtCount">Districts <span class="arrow" aria-hidden="true">↑</span></button></th>
+            <th scope="col"><button type="button" data-sort="kind">Source <span class="arrow" aria-hidden="true">↑</span></button></th>
+            <th scope="col"><button type="button" data-sort="checked">Checked <span class="arrow" aria-hidden="true">↑</span></button></th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody id="banks-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="provenance" aria-labelledby="prov-h">
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Provenance</p>
+      <h2 id="prov-h">Where every row came from</h2>
+      <p>Two kinds of source, recorded per bank rather than blurred into one number.</p>
+    </header>
+    <div class="cols">
+      <div class="panel">
+        <h3>Source mix</h3>
+        <div class="bar" id="source-bar" role="img" aria-label="Share of institutions read from the bank's own website versus the consolidated BACH table">
+          <span class="first"></span><span class="bach"></span>
+        </div>
+        <ul class="legend">
+          <li class="first"><i aria-hidden="true"></i><span id="legend-first">—</span></li>
+          <li class="bach"><i aria-hidden="true"></i><span id="legend-bach">—</span></li>
+        </ul>
+        <p style="margin-top:.9rem">
+          The BACH table — the consolidated routing list dated 26.06.2025, published by
+          Dhaka Bank PLC — is used <strong>additively</strong>, for banks that publish no
+          routing numbers themselves. It is a snapshot, so it is never treated as
+          authority for a branch being <em>absent</em>.
+        </p>
+      </div>
+      <div class="panel">
+        <h3>Corroboration</h3>
+        <p>Cross-checking the whole set against that table: <strong>99.4% corroborated, zero contradictions</strong> — no routing is filed here under a different bank than the table files it under.</p>
+        <p>The 0.6% are branches opened since June 2025, or published by a bank and not yet in the consolidated list. Absence from a snapshot is not evidence.</p>
+      </div>
+      <div class="panel">
+        <h3>What is deliberately missing</h3>
+        <p>An invented routing number does not fail. It is well-formed, passes every structural check, and pays a real account belonging to someone else. So where the evidence runs out, the row is left out:</p>
+        <ul>
+          <li>11 branches a bank lists without publishing a routing</li>
+          <li>1 branch whose bank prints another bank's prefix</li>
+          <li>1 routing no source can name</li>
+          <li>3 scheduled banks with no published routings at all</li>
+        </ul>
+        <p style="margin-top:.75rem"><a href="https://github.com/MdHRShohel/bd-bank-routing/blob/main/docs/KNOWN-GAPS.md">Each one is named, with what would close it →</a></p>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>On staleness.</strong> Banks open, close and rename branches. This is a
+      snapshot, and every bank above shows the date it was checked so you can judge for
+      yourself. It does not promise a freshness nobody is maintaining.
+    </div>
+  </div>
+</section>
+
+<section id="install" aria-labelledby="install-h">
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Use it</p>
+      <h2 id="install-h">Two packages, one dataset</h2>
+      <p>Python and JavaScript are thin wrappers over the same canonical JSON, so they cannot drift on behaviour and the data cannot drift at all.</p>
+    </header>
+    <div class="cols">
+      <div>
+        <pre><code><span class="c"># Python</span>
+pip install bd-bank-routing
+
+<span class="k">import</span> bdbanks
+
+bdbanks.lookup(<span class="s">"225150135"</span>)
+<span class="c"># Branch(routing='225150135', name='Agrabad Branch',</span>
+<span class="c">#        district='CHATTOGRAM', bank_code='225',</span>
+<span class="c">#        bank_name='CITY BANK PLC', payable=True)</span>
+
+bdbanks.check(<span class="s">"225150135"</span>, bank_name=<span class="s">"Citibank N.A"</span>).ok
+<span class="c"># False</span></code></pre>
+      </div>
+      <div>
+        <pre><code><span class="c">// JavaScript / TypeScript</span>
+npm install bd-bank-routing
+
+<span class="k">import</span> { lookup, check } <span class="k">from</span> <span class="s">"bd-bank-routing"</span>;
+
+lookup(<span class="s">"225150135"</span>)?.bankName;
+<span class="c">// "CITY BANK PLC"</span>
+
+check(<span class="s">"225150135"</span>, <span class="s">"Citibank N.A"</span>).ok;
+<span class="c">// false</span></code></pre>
+      </div>
+    </div>
+    <div class="note">
+      Or take <code>data/banks.json</code> and use it however you like — it is the same
+      file both packages ship, it has no dependencies, and the data is
+      <strong>CC0</strong>. Code is MIT.
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Code MIT · data CC0. Routing numbers are public facts; the point is that you can use them without asking.</p>
+    <p class="right"><a href="https://github.com/MdHRShohel/bd-bank-routing">Source &amp; issues</a></p>
+  </div>
+</footer>
+
+<script src="app.js" type="module"></script>
+</body>
+</html>

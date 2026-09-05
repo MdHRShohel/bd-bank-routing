@@ -1,0 +1,40 @@
+# source: https://citizensbankbd.com/information-of-branches/
+# checked: 2026-09-05
+# name: CITIZENS BANK PLC
+# branches: 22
+# Citizens Bank PLC — on Bangladesh Bank's scheduled-bank list but absent from
+# our directory entirely, so an employee banking here could not be selected in
+# the picker and therefore could not be paid by bank transfer at all.
+#
+# b6f4a2c81e93 left this bank out deliberately: the reference listed 27 branches,
+# another source 12, and the BEFTN lookup held none of its routing numbers. The
+# bank's OWN site settles it — each branch is a card carrying `Branch Name` and
+# `Routing number` in the same table, so name and routing are paired INSIDE one
+# card (RULE 0), never matched across the page.
+#
+# Districts are derived from digits 4-5 of the routing and CONFIRMED against the
+# address in the same card. That check mattered: Sonakanda's code (27) is
+# ambiguous in our corpus between Dhaka and Narayanganj, and its address —
+# "Ruhitpur, Keranigonj, Dhaka" — settles it as Dhaka.
+320100372|Bogura Branch|Bogura
+320120231|Nayanpur Bazar Branch|Brahmanbaria
+320150135|Agrabad Branch|Chattogram
+320150685|Lohagara Branch|Chattogram
+320150843|Chowdhuryhat Branch|Chattogram
+320191152|Cumilla Branch|Cumilla
+320260225|Ashulia Branch|Dhaka
+320261811|Gulshan Corporate Branch|Dhaka
+320264526|Tejgaon Link Road Branch|Dhaka
+320264634|Uttara Branch|Dhaka
+320270510|Dhanmondi Branch|Dhaka
+320270923|Sonakanda Branch|Dhaka
+320272800|Imamganj Branch|Dhaka
+320273346|Kadamtoli Branch|Dhaka
+320275357|Principal Branch|Dhaka
+320300527|Feni Branch|Feni
+320330126|Mouchak Branch|Gazipur
+320590887|Malkhanagar Branch|Munshiganj
+320612099|Seed Store Bazar Branch|Mymensingh
+320670228|Bhulta Branch|Narayanganj
+320671180|Narayanganj Branch|Narayanganj
+320750580|Chatkhil Branch|Noakhali

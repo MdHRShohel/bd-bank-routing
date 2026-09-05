@@ -1,0 +1,14 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-06
+# name: NATIONAL BANK OF PAKISTAN
+# branches: 4
+# NATIONAL BANK OF PAKISTAN (155).
+# NOT FROM THE BANK'S OWN SITE. This bank publishes branch LOCATIONS but no
+# BEFTN routing numbers, so it cannot be settled against itself. Taken from the
+# consolidated BACH routing table (26.06.2025) published by Dhaka Bank PLC.
+# A snapshot: never authority for a branch being ABSENT.
+# Settlement endpoints excluded (5): 155270006, 155270369, 155270385, 155270398, 155270785
+155151967|CHITTAGONG|CHATTOGRAM
+155261723|GULSHAN|DHAKA
+155271784|DHAKA(MAIN)|DHAKA
+155913550|SYLHET|SYLHET

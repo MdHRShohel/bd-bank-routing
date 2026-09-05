@@ -1,0 +1,14 @@
+# source: https://dhakabank.com.bd/wp-content/uploads/2025/07/All-Bank-Routing-Number-26.06.2025.pdf
+# checked: 2026-09-06
+# name: CITIBANK N.A
+# branches: 4
+# CITIBANK N.A (075).
+# NOT FROM THE BANK'S OWN SITE. This bank publishes branch LOCATIONS but no
+# BEFTN routing numbers, so it cannot be settled against itself. Taken from the
+# consolidated BACH routing table (26.06.2025) published by Dhaka Bank PLC.
+# A snapshot: never authority for a branch being ABSENT.
+# Settlement endpoints excluded (5): 075270007, 075270360, 075270386, 075270399, 075270786
+075151968|N A CHITTAGONG CHITTAGONG|CHATTOGRAM
+075261182|N A DHAKA-NORTH DHANMONDI|DHAKA
+075261724|N A DHAKA-NORTH GULSHAN|DHAKA
+075274245|N A DHAKA-SOUTH MOTIJHEEL|DHAKA
