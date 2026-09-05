@@ -291,11 +291,11 @@ function showSearch(query) {
         ? `<p class="eyebrow" style="margin-bottom:.6rem">Institutions</p>
            <ul class="hits" style="margin-bottom:1.25rem">${bankHits
              .map(
-               (b) => `<li><button type="button" data-bank="${esc(b.code)}">
+               (b) => `<li><a class="bank-hit" href="banks/${esc(b.slug)}/">
                  <span class="r">${esc(b.code)}</span>
                  <span class="n">${esc(b.name)}</span>
-                 <span class="b">${b.branchCount.toLocaleString("en")} branches</span>
-               </button></li>`
+                 <span class="b">${b.branchCount.toLocaleString("en")} branches &rarr;</span>
+               </a></li>`
              )
              .join("")}</ul>`
         : ""
@@ -386,7 +386,10 @@ function renderBanks() {
       (b) => `
       <tr class="bank-row" data-code="${esc(b.code)}" aria-expanded="false">
         <td class="num">${esc(b.code)}</td>
-        <td class="name"><button type="button" class="row-toggle">${icon.caret}<span>${esc(b.name)}</span></button></td>
+        <td class="name">
+          <button type="button" class="row-toggle" aria-label="Show ${esc(b.name)} branches">${icon.caret}</button>
+          <a href="banks/${esc(b.slug)}/">${esc(b.name)}</a>
+        </td>
         <td class="num">${b.branchCount.toLocaleString("en")}</td>
         <td class="num">${b.districtCount}</td>
         <td>${
@@ -524,6 +527,7 @@ async function main() {
       return;
     }
 
+    if (e.target.closest("tr.bank-row a")) return; // let the bank page link win
     const row = e.target.closest("tr.bank-row");
     if (row) return toggleBank(row);
   });
@@ -581,7 +585,14 @@ async function main() {
   };
   window.addEventListener("hashchange", applyHash);
 
-  if (!(await applyHash())) renderAnatomy("");
+  if (!(await applyHash())) {
+    renderAnatomy("");
+    // The banks table is rendered by JS, so it does not exist when the browser
+    // acts on a #section anchor at load — every in-page link lands short by the
+    // height of 63 rows. Re-aim once the table is actually on the page.
+    const target = location.hash.match(/^#([\w-]+)$/);
+    if (target) document.getElementById(target[1])?.scrollIntoView();
+  }
 }
 
 main().catch((err) => {

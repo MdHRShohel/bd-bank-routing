@@ -490,3 +490,91 @@ pre .s { color: var(--accent); }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
+
+/* ---------- sub-page hero (generated bank pages) -------------------------- */
+
+.hero--sub { padding: clamp(2rem, 5vw, 3.25rem) 0 1.25rem; }
+.hero--sub h1 { font-size: clamp(1.6rem, 4vw, 2.35rem); max-width: 24ch; }
+.hero--sub .eyebrow a { color: inherit; }
+.hero--sub .stats { margin-top: 1.25rem; }
+
+.cta {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: 0 1.1rem; border-radius: var(--r-md);
+  font: 600 14px/1 var(--mono); text-decoration: none;
+  color: var(--accent-fg); background: var(--accent);
+  transition: filter var(--step);
+}
+.cta:hover { filter: brightness(1.08); }
+
+.note--warn { border-inline-start-color: var(--danger); }
+
+.bank-links {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1px; background: var(--border-soft);
+  border: 1px solid var(--border-soft); border-radius: var(--r-md); overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+.bank-links li { display: flex; align-items: center; gap: 1rem; background: var(--surface); }
+.bank-links a {
+  flex: 1; min-height: 44px; display: flex; align-items: center;
+  padding: 0.5rem 0.85rem; font-size: 14px; text-decoration: none;
+  transition: background var(--step), color var(--step);
+}
+.bank-links a:hover { background: var(--surface-2); color: var(--accent); }
+.bank-links .n { padding-inline-end: 0.85rem; font: 500 12px var(--mono); color: var(--fg-faint); }
+
+/* ---------- FAQ ----------------------------------------------------------- */
+
+.faq { display: grid; gap: 0.5rem; max-width: 78ch; }
+.qa { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+.qa summary {
+  display: flex; align-items: center; gap: 0.7rem;
+  min-height: 56px; padding: 0.75rem 1.1rem; cursor: pointer;
+  list-style: none; transition: background var(--step);
+}
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::before {
+  content: ""; flex: none; width: 9px; height: 9px;
+  border-inline-end: 2px solid var(--accent); border-block-end: 2px solid var(--accent);
+  transform: rotate(-45deg); transition: transform var(--step);
+}
+.qa[open] summary::before { transform: rotate(45deg); }
+.qa summary:hover { background: var(--surface-2); }
+.qa summary h3 { font: 600 0.98rem/1.4 var(--sans); margin: 0; }
+.qa__body { padding: 0 1.1rem 1.1rem 2.8rem; }
+.qa__body p { margin: 0; color: var(--fg-muted); font-size: 14.5px; max-width: 68ch; }
+
+/* ---------- bank hit in search results ------------------------------------ */
+
+.hits li > a.bank-hit {
+  width: 100%; min-height: 44px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem;
+  padding: 0.7rem 0.85rem; text-decoration: none;
+  background: var(--surface-2); border: 1px solid var(--border-soft);
+  border-radius: var(--r-md); color: inherit;
+  transition: border-color var(--step), background var(--step);
+}
+.hits li > a.bank-hit:hover { border-color: var(--accent); background: var(--surface-3); }
+
+/* ---------- bank table: name is a link, caret is the expander ------------- */
+
+td.name { display: flex; align-items: center; gap: 0.5rem; }
+td.name a { text-decoration: none; }
+td.name a:hover { color: var(--accent); text-decoration: underline; }
+.row-toggle { width: 28px; justify-content: center; }
+
+/* ---------- footer byline ------------------------------------------------- */
+
+.site-foot .wrap { display: block; }
+.site-foot .byline { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; align-items: baseline; }
+.site-foot .built { font-size: 14.5px; color: var(--fg); }
+.site-foot .built a { font-weight: 600; color: var(--accent); }
+.site-foot .links { display: flex; flex-wrap: wrap; gap: 0.5rem; font-family: var(--mono); font-size: 13px; }
+.site-foot .links a { min-height: 32px; display: inline-flex; align-items: center; }
+.site-foot .links span { color: var(--fg-faint); }
+.site-foot .licence { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--border-soft); font-size: 13px; }
+
+/* The header is sticky, so an anchored heading would otherwise land underneath it. */
+:target, section[id], [id^="lookup"], #faq, #banks, #install, #catches, #provenance {
+  scroll-margin-top: 76px;
+}

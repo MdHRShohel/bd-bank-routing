@@ -1,0 +1,92 @@
+# bd-bank-routing
+
+> Bangladesh bank, branch and BEFTN routing-number data with per-bank provenance:
+> 63 institutions, 11,426 branches, all
+> 64 districts. Every row is traceable to the page it was read
+> from and the date it was read. Dataset generated 2026-09-06.
+
+A Bangladeshi routing number is nine digits: bank(3) + district(2) + branch(3) + check(1).
+The first three digits ARE the bank and digits 4-5 ARE the district, so a routing number can
+be checked against the bank name stored beside it rather than trusted.
+
+## Core
+
+- [Lookup tool and dataset overview](https://mdhrshohel.github.io/bd-bank-routing/): resolve a routing number, browse all banks
+- [Source repository](https://github.com/MdHRShohel/bd-bank-routing): captures, build, packages, known gaps
+- [Known gaps](https://github.com/MdHRShohel/bd-bank-routing/blob/main/docs/KNOWN-GAPS.md): what is deliberately missing, and why
+- [Capture rules](https://github.com/MdHRShohel/bd-bank-routing/blob/main/docs/CAPTURING.md): how to read a bank's site without getting it wrong
+
+## Packages
+
+- `pip install bd-bank-routing` (imports as `bdbanks`)
+- `npm install bd-bank-routing`
+
+## Banks
+
+- [AGRANI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/agrani-bank-plc/): 980 branches, prefix 010
+- [AL-ARAFAH ISLAMI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/al-arafah-islami-bank-plc/): 226 branches, prefix 015
+- [AB BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/ab-bank-plc/): 104 branches, prefix 020
+- [BANGLADESH BANK routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/bangladesh-bank/): 35 branches, prefix 025
+- [BANGLADESH COMMERCE BANK LIMITED routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/bangladesh-commerce-bank-limited/): 75 branches, prefix 030
+- [BANGLADESH KRISHI BANK routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/bangladesh-krishi-bank/): 1,038 branches, prefix 035
+- [BANGLADESH SAMABAYA BANK LTD routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/bangladesh-samabaya-bank-ltd/): 1 branches, prefix 040
+- [BANGLADESH DEVELOPMENT BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/bangladesh-development-bank-plc/): 52 branches, prefix 047
+- [BASIC BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/basic-bank-plc/): 73 branches, prefix 055
+- [BRAC BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/brac-bank-plc/): 196 branches, prefix 060
+- [BANK AL-FALAH LIMITED routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/bank-al-falah-limited/): 7 branches, prefix 065
+- [BANK ASIA PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/bank-asia-plc/): 137 branches, prefix 070
+- [CITIBANK N.A routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/citibank-n-a/): 4 branches, prefix 075
+- [COMMERCIAL BANK OF CEYLON LIMITED routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/commercial-bank-of-ceylon-limited/): 11 branches, prefix 080
+- [DHAKA BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/dhaka-bank-plc/): 118 branches, prefix 085
+- [DUTCH-BANGLA BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/dutch-bangla-bank-plc/): 247 branches, prefix 090
+- [EASTERN BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/eastern-bank-plc/): 88 branches, prefix 095
+- [EXPORT IMPORT BANK OF BANGLADESH PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/export-import-bank-of-bangladesh-plc/): 155 branches, prefix 100
+- [FIRST SECURITY ISLAMI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/first-security-islami-bank-plc/): 204 branches, prefix 105
+- [HABIB BANK LTD. routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/habib-bank-ltd/): 7 branches, prefix 110
+- [THE HONG KONG AND SHANGHAI BANKING CORPORATION LTD. routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/the-hong-kong-and-shanghai-banking-corporation-ltd/): 16 branches, prefix 115
+- [IFIC BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/ific-bank-plc/): 189 branches, prefix 120
+- [ISLAMI BANK BANGLADESH PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/islami-bank-bangladesh-plc/): 402 branches, prefix 125
+- [JAMUNA BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/jamuna-bank-plc/): 170 branches, prefix 130
+- [JANATA BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/janata-bank-plc/): 918 branches, prefix 135
+- [MERCANTILE BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/mercantile-bank-plc/): 152 branches, prefix 140
+- [MUTUAL TRUST BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/mutual-trust-bank-plc/): 125 branches, prefix 145
+- [NATIONAL BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/national-bank-plc/): 222 branches, prefix 150
+- [NATIONAL BANK OF PAKISTAN routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/national-bank-of-pakistan/): 4 branches, prefix 155
+- [NATIONAL CREDIT & COMMERCE BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/national-credit-commerce-bank-plc/): 132 branches, prefix 160
+- [ONE BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/one-bank-plc/): 115 branches, prefix 165
+- [PRIME BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/prime-bank-plc/): 150 branches, prefix 170
+- [PUBALI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/pubali-bank-plc/): 518 branches, prefix 175
+- [RAJSHAHI KRISHI UNNAYAN BANK routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/rajshahi-krishi-unnayan-bank/): 384 branches, prefix 180
+- [RUPALI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/rupali-bank-plc/): 591 branches, prefix 185
+- [SHAHJALAL ISLAMI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/shahjalal-islami-bank-plc/): 143 branches, prefix 190
+- [SOCIAL ISLAMI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/social-islami-bank-plc/): 179 branches, prefix 195
+- [SONALI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/sonali-bank-plc/): 1,228 branches, prefix 200
+- [SOUTHEAST BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/southeast-bank-plc/): 143 branches, prefix 205
+- [STANDARD ISLAMI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/standard-islami-bank-plc/): 140 branches, prefix 210
+- [STANDARD CHARTERED BANK routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/standard-chartered-bank/): 19 branches, prefix 215
+- [STATE BANK OF INDIA routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/state-bank-of-india/): 6 branches, prefix 220
+- [CITY BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/city-bank-plc/): 134 branches, prefix 225
+- [ICB ISLAMIC BANK LTD. routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/icb-islamic-bank-ltd/): 33 branches, prefix 230
+- [THE PREMIER BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/the-premier-bank-plc/): 137 branches, prefix 235
+- [TRUST BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/trust-bank-plc/): 126 branches, prefix 240
+- [UNITED COMMERCIAL BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/united-commercial-bank-plc/): 235 branches, prefix 245
+- [UTTARA BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/uttara-bank-plc/): 251 branches, prefix 250
+- [WOORI BANK routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/woori-bank/): 7 branches, prefix 255
+- [NRBC BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/nrbc-bank-plc/): 110 branches, prefix 260
+- [UNION BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/union-bank-plc/): 114 branches, prefix 265
+- [SBAC BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/sbac-bank-plc/): 95 branches, prefix 270
+- [MEGHNA BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/meghna-bank-plc/): 57 branches, prefix 275
+- [PADMA BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/padma-bank-plc/): 61 branches, prefix 280
+- [MIDLAND BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/midland-bank-plc/): 42 branches, prefix 285
+- [NRB BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/nrb-bank-plc/): 57 branches, prefix 290
+- [MODHUMOTI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/modhumoti-bank-plc/): 53 branches, prefix 295
+- [GLOBAL ISLAMI BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/global-islami-bank-plc/): 105 branches, prefix 300
+- [SHIMANTO BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/shimanto-bank-plc/): 28 branches, prefix 305
+- [COMMUNITY BANK BANGLADESH PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/community-bank-bangladesh-plc/): 18 branches, prefix 310
+- [BENGAL COMMERCIAL BANK PLC. routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/bengal-commercial-bank-plc/): 26 branches, prefix 315
+- [CITIZENS BANK PLC routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/citizens-bank-plc/): 22 branches, prefix 320
+- [OFFICE OF THE CONTROLLER GENERAL  OF ACCOUNTS routing numbers](https://mdhrshohel.github.io/bd-bank-routing/banks/office-of-the-controller-general-of-accounts/): 11 branches, prefix 405
+
+## Author
+
+Md. Habibur Rahman Shohel — https://shohel.bro.bd — https://github.com/MdHRShohel

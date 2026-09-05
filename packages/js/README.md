@@ -152,9 +152,14 @@ branch and check digit, with the source and check-date of whichever bank it
 resolves to.
 
 ```bash
-python3 scripts/build_site.py     # reshape the dataset for the browser
+./scripts/check.sh                # build everything + run both test suites
 cd site && python3 -m http.server # then open http://localhost:8000
 ```
+
+Alongside it the build writes a page per bank — `site/banks/<bank>/` — with
+that bank's whole branch table in the HTML, so the rows are readable (and
+indexable) with JavaScript switched off. A hash route cannot be indexed, and
+nobody searches for this project by name; they search for their bank.
 
 It never downloads `banks.json`. `scripts/build_site.py` splits it into a 3 KB
 metadata file and a `routing|name` index that gzips to about 93 KB, and the page

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# The dataset is CC0 and the whole point is reuse.
+Sitemap: https://mdhrshohel.github.io/bd-bank-routing/sitemap.xml

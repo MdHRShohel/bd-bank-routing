@@ -22,7 +22,11 @@ demonstration of the claim it opens with rather than a restatement of it.
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from seo import slugify  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "banks.json"
@@ -62,6 +66,7 @@ def main() -> None:
             {
                 "code": b["code"],
                 "name": b["name"],
+                "slug": slugify(b["name"]),
                 "payable": b["payable"],
                 "payableReason": b.get("payable_reason"),
                 "source": b["source"],

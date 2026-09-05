@@ -87,6 +87,21 @@ Worth publishing on its own; each cost real debugging:
       1.4 MB dataset into a 3 KB meta file plus a 93 KB (gzipped) branch index,
       and the page derives every district from digits 4–5 rather than reading a
       stored field — so it demonstrates its own opening claim.
+- [x] **M4b — discoverability** 63 generated per-bank pages, because nobody
+      searches "bd-bank-routing" — they search "sonali bank routing number", and
+      a `#/r/...` hash is not a URL anything indexes. Each page carries its bank's
+      full branch table in the HTML (no JS needed to read it), Dataset +
+      BreadcrumbList JSON-LD, canonical and OG tags. Plus `sitemap.xml`,
+      `robots.txt`, `llms.txt`, an FAQ section with FAQPage schema, a generated
+      1200x630 OG card, and the author byline pairing shohel.bro.bd with the
+      GitHub profile in markup and in `Person.sameAs`.
+
+      ⚠ **Confirm before publishing:** `SITE_URL` in `scripts/seo.py` is the one
+      value every canonical, sitemap entry and OG tag is built from. It currently
+      says `https://mdhrshohel.github.io/bd-bank-routing`. If the site goes to a
+      custom domain instead, change it there and rebuild — a canonical pointing
+      at the wrong host is worse than no canonical at all.
+
 - [ ] **M5 — publish** repo public under `MdHRShohel`, then the registries.
 
 ## Decisions taken
