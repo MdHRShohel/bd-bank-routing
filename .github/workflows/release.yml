@@ -1,0 +1,61 @@
+name: Publish packages
+
+# Publishing happens on a tag, never on a push to main, so it is always a
+# deliberate act. Both jobs use OIDC trusted publishing: no long-lived token is
+# stored in this repository or on anyone's laptop.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - uses: astral-sh/setup-uv@v5
+
+      # The same gate that runs locally: build the dataset, run both suites, then
+      # install both packages into clean environments and actually use them.
+      # A package that imports cleanly in its own repo can still be broken on
+      # install, which is how this gate came to exist.
+      - run: ./scripts/check.sh
+
+  npm:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write   # OIDC, for trusted publishing + provenance
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+      - name: Build
+        working-directory: packages/js
+        run: npm run build
+      - name: Publish
+        working-directory: packages/js
+        run: npm publish --access public --provenance
+
+  pypi:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write   # OIDC, for PyPI trusted publishing
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v5
+      - name: Build
+        working-directory: packages/python
+        run: uv build
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: packages/python/dist
