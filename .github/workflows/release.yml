@@ -18,6 +18,12 @@ jobs:
           node-version: "22"
       - uses: astral-sh/setup-uv@v5
 
+      # check.sh regenerates the Open Graph card (Pillow) and runs the JS suite
+      # from the package's own node_modules, so both have to exist first.
+      - run: pip install --quiet pillow
+      - run: npm ci
+        working-directory: packages/js
+
       # The same gate that runs locally: build the dataset, run both suites, then
       # install both packages into clean environments and actually use them.
       # A package that imports cleanly in its own repo can still be broken on

@@ -29,13 +29,43 @@ INFO = (96, 165, 250)
 WARN = (251, 191, 36)
 LINE = (43, 58, 92)
 
-MONO = "/System/Library/Fonts/Menlo.ttc"
-MONO_BOLD = "/System/Library/Fonts/Menlo.ttc"
-SANS = "/System/Library/Fonts/Supplemental/Arial.ttf"
+#: Font files, most-preferred first, per family. Hardcoding a macOS path meant
+#: this script could only run on the machine it was written on — which for a
+#: public repo means it could not run in CI or for a contributor on Linux.
+FONT_CANDIDATES = {
+    "mono": [
+        ("/System/Library/Fonts/Menlo.ttc", 1),
+        ("/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf", 0),
+        ("/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf", 0),
+        ("/Library/Fonts/Arial Unicode.ttf", 0),
+    ],
+    "sans": [
+        ("/System/Library/Fonts/Supplemental/Arial.ttf", 0),
+        ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 0),
+        ("/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf", 0),
+    ],
+}
 
 
-def font(path: str, size: int, index: int = 0) -> ImageFont.FreeTypeFont:
+def _resolve(family: str) -> tuple[str, int]:
+    for path, index in FONT_CANDIDATES[family]:
+        if Path(path).exists():
+            return path, index
+    raise SystemExit(
+        f"no {family} font found. Tried: "
+        + ", ".join(p for p, _ in FONT_CANDIDATES[family])
+    )
+
+
+def font(family: str, size: int, _legacy_index: int = 0) -> ImageFont.FreeTypeFont:
+    """A font of `size`, from whichever candidate this machine actually has."""
+    path, index = _resolve(family)
     return ImageFont.truetype(path, size, index=index)
+
+
+MONO = "mono"
+MONO_BOLD = "mono"
+SANS = "sans"
 
 
 def main() -> None:
