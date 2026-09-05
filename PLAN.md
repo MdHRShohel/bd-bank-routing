@@ -116,7 +116,7 @@ Worth publishing on its own; each cost real debugging:
 * **Owner** personal account `MdHRShohel` — this is portfolio and self-branding.
 * **Split** data + validator + site in v1. A data-only drop is easy to ignore and
   hard to re-launch.
-* **Separate repo**, outside `hrms-serviq`. No dependency either way.
+* **Separate repo**, outside the product this data came from. No dependency either way.
 
 ## Open questions
 
