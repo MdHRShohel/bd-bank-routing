@@ -39,9 +39,24 @@ jobs:
       - name: Build
         working-directory: packages/js
         run: npm run build
+      # Two supported paths, because npm's trusted publishing is configured per
+      # package and so cannot be set up before the package exists:
+      #   - NPM_TOKEN secret present -> publish with it (works for a first release)
+      #   - no secret -> OIDC trusted publishing + a signed provenance attestation
+      # Once the first release has landed, configure the trusted publisher on
+      # npmjs.com and delete the secret; this step switches over on its own.
       - name: Publish
         working-directory: packages/js
-        run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "${NODE_AUTH_TOKEN:-}" ]; then
+            echo "Publishing with NPM_TOKEN"
+            npm publish --access public
+          else
+            echo "Publishing via OIDC trusted publishing"
+            npm publish --access public --provenance
+          fi
 
   pypi:
     needs: verify
