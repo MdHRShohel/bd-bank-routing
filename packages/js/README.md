@@ -2,6 +2,8 @@
 
 **Bangladesh bank routing numbers, branches and districts — with the receipts.**
 
+**→ [Look one up](https://mdhrshohel.github.io/bd-bank-routing/)**
+
 Look up any BD bank routing number, or check that the one you already store is
 real, payable, and actually belongs to the bank whose name sits next to it.
 
@@ -33,8 +35,13 @@ encodes the mistakes that are easy to make and expensive to find.
 
 ```bash
 pip install bd-bank-routing      # Python
-npm install bd-bank-routing      # JavaScript / TypeScript
+npm install bd-bank-routing      # JavaScript / TypeScript  (also yarn / pnpm / bun)
 ```
+
+> **Not on the registries yet.** The names are reserved and the packages build,
+> install and pass their suites — see [docs/PUBLISHING.md](docs/PUBLISHING.md).
+> Until they are pushed, use the site above or take `data/banks.json` directly.
+> This note goes away when they land.
 
 ```python
 import bdbanks                                   # short import, like bs4

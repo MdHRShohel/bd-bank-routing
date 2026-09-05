@@ -102,7 +102,16 @@ Worth publishing on its own; each cost real debugging:
       custom domain instead, change it there and rebuild — a canonical pointing
       at the wrong host is worse than no canonical at all.
 
-- [ ] **M5 — publish** repo public under `MdHRShohel`, then the registries.
+- [~] **M5 — publish**
+      - [x] repo public at https://github.com/MdHRShohel/bd-bank-routing
+      - [x] site live at https://mdhrshohel.github.io/bd-bank-routing/ (Pages,
+            deployed by `.github/workflows/pages.yml`)
+      - [x] listed on the portfolio at https://shohel.bro.bd/projects/bd-bank-routing
+      - [ ] **npm** — needs an npm login/token. One publish covers npm, yarn,
+            pnpm and bun; they all resolve from the same registry.
+      - [ ] **PyPI** — needs a PyPI API token.
+      - [ ] once both land: drop the "not on the registries yet" note from the
+            README, and submit `sitemap.xml` to Google Search Console.
 
 ## Decisions taken
 
