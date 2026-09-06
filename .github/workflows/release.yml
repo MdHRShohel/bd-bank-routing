@@ -38,10 +38,15 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v5
+      # No `registry-url:` on purpose. It makes setup-node write an .npmrc
+      # containing //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN} and export
+      # NODE_AUTH_TOKEN as the literal placeholder XXXXX-XXXXX-XXXXX-XXXXX. npm
+      # then tries token auth with that placeholder, fails with ENEEDAUTH, and
+      # never attempts the OIDC exchange — with nothing in the error naming the
+      # real cause.
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
-          registry-url: "https://registry.npmjs.org"
 
       # OIDC trusted publishing landed in npm 11.5.1, and Node 22 still ships
       # npm 10.x — which fails with ENEEDAUTH and no hint that the version is
@@ -59,24 +64,11 @@ jobs:
       - name: Build
         working-directory: packages/js
         run: npm run build
-      # Two supported paths, because npm's trusted publishing is configured per
-      # package and so cannot be set up before the package exists:
-      #   - NPM_TOKEN secret present -> publish with it (works for a first release)
-      #   - no secret -> OIDC trusted publishing + a signed provenance attestation
-      # Once the first release has landed, configure the trusted publisher on
-      # npmjs.com and delete the secret; this step switches over on its own.
+      # OIDC trusted publishing, configured on npmjs.com against this repo and
+      # this workflow. No token exists to leak or rotate.
       - name: Publish
         working-directory: packages/js
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          if [ -n "${NODE_AUTH_TOKEN:-}" ]; then
-            echo "Publishing with NPM_TOKEN"
-            npm publish --access public
-          else
-            echo "Publishing via OIDC trusted publishing"
-            npm publish --access public --provenance
-          fi
+        run: npm publish --access public --provenance
 
   pypi:
     needs: verify
@@ -94,3 +86,6 @@ jobs:
       - uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: packages/python/dist
+          # A re-run after fixing the *other* job should not fail here just
+          # because this version already uploaded.
+          skip-existing: true
