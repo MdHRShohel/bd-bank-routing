@@ -57,10 +57,11 @@ Then add the topics people search: `bangladesh`, `banking`, `routing-number`,
 npm, yarn, pnpm and bun all install from the same registry, so this is **one**
 publish, not four.
 
+Both registries now publish from CI on a tag, with no credential anywhere:
+
 ```bash
-cd packages/js
-npm login                 # or: npm config set //registry.npmjs.org/:_authToken=<token>
-npm publish --access public
+# bump both versions together, then
+git tag -a v0.1.2 -m "v0.1.2" && git push origin v0.1.2
 ```
 
 `prepublishOnly` rebuilds and re-runs the tests, so a broken build cannot be
@@ -92,6 +93,33 @@ python -c "import bdbanks; print(bdbanks.lookup('225150135'))"
 The install name is `bd-bank-routing` and the import name is `bdbanks`, the way
 `beautifulsoup4` imports as `bs4`. Both were free on both registries as of
 2026-09-06.
+
+## Gotchas that cost a whole afternoon
+
+All three of these fail with an error that names something other than the cause.
+
+**`setup-node` with `registry-url:` breaks OIDC.** It writes an `.npmrc` pinning
+the auth token to `$NODE_AUTH_TOKEN` and exports that variable as the literal
+string `XXXXX-XXXXX-XXXXX-XXXXX`. npm then attempts token auth with the
+placeholder, fails `ENEEDAUTH`, and never reaches the OIDC exchange. Omit
+`registry-url` entirely when publishing via trusted publishing.
+
+**npm OIDC needs npm >= 11.5.1**, and Node 22 still ships npm 10.x. Same
+`ENEEDAUTH`, no mention of the version. `npm install -g npm@latest` first.
+
+**npm has no pending-publisher concept.** Trusted publishing is configured on an
+existing package, so the very first version has to be published another way —
+`npm login && npm publish` from a terminal, entering the OTP by hand. Do not
+create a bypass-2FA token for this; npm warns against it, and it is only needed
+once. After that first publish, set up the trusted publisher and never hold a
+token again. When configuring it: **Environment must be blank** (the npm job has
+no `environment:`), and **Allow `npm publish`** must be ticked or only staged
+publishes are permitted and releases silently never ship.
+
+PyPI, by contrast, supports a *pending* publisher, so it can publish a
+brand-new project from CI with no manual first release and no token at all.
+
+---
 
 ## 5. Releasing again later
 

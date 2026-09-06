@@ -107,11 +107,12 @@ Worth publishing on its own; each cost real debugging:
       - [x] site live at https://mdhrshohel.github.io/bd-bank-routing/ (Pages,
             deployed by `.github/workflows/pages.yml`)
       - [x] listed on the portfolio at https://shohel.bro.bd/projects/bd-bank-routing
-      - [ ] **npm** — needs an npm login/token. One publish covers npm, yarn,
-            pnpm and bun; they all resolve from the same registry.
-      - [ ] **PyPI** — needs a PyPI API token.
-      - [ ] once both land: drop the "not on the registries yet" note from the
-            README, and submit `sitemap.xml` to Google Search Console.
+      - [x] **npm** https://www.npmjs.com/package/bd-bank-routing — 0.1.1, via
+            OIDC trusted publishing. One publish covers npm, yarn, pnpm and bun.
+      - [x] **PyPI** https://pypi.org/project/bd-bank-routing/ — 0.1.1, via OIDC
+            trusted publishing (pending publisher, no token, no manual first release).
+      - [ ] submit `sitemap.xml` to Google Search Console — the 63 per-bank pages
+            are what will pick up long-tail traffic, so watch those.
 
 ## Decisions taken
 
