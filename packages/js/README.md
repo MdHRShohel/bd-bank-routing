@@ -38,10 +38,10 @@ pip install bd-bank-routing      # Python
 npm install bd-bank-routing      # JavaScript / TypeScript  (also yarn / pnpm / bun)
 ```
 
-> **Not on the registries yet.** The names are reserved and the packages build,
-> install and pass their suites — see [docs/PUBLISHING.md](docs/PUBLISHING.md).
-> Until they are pushed, use the site above or take `data/banks.json` directly.
-> This note goes away when they land.
+> **npm is live; PyPI is not published yet.** `npm install bd-bank-routing`
+> works today. The Python package builds, installs and passes its suite — see
+> [docs/PUBLISHING.md](docs/PUBLISHING.md) — but is not on PyPI yet. Until it is,
+> take `data/banks.json` directly, or use the site above.
 
 ```python
 import bdbanks                                   # short import, like bs4
