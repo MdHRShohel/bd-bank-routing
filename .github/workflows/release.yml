@@ -43,6 +43,12 @@ jobs:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
 
+      # OIDC trusted publishing landed in npm 11.5.1, and Node 22 still ships
+      # npm 10.x — which fails with ENEEDAUTH and no hint that the version is
+      # the problem.
+      - name: Use an npm that supports OIDC
+        run: npm install -g npm@latest
+
       # Jobs do not share a filesystem, so the install done in `verify` is not
       # here. Without it `prepublishOnly` — which runs the build and the tests
       # again as a last line of defence — dies with "vitest: not found".

@@ -38,10 +38,8 @@ pip install bd-bank-routing      # Python
 npm install bd-bank-routing      # JavaScript / TypeScript  (also yarn / pnpm / bun)
 ```
 
-> **npm is live; PyPI is not published yet.** `npm install bd-bank-routing`
-> works today. The Python package builds, installs and passes its suite — see
-> [docs/PUBLISHING.md](docs/PUBLISHING.md) — but is not on PyPI yet. Until it is,
-> take `data/banks.json` directly, or use the site above.
+[![npm](https://img.shields.io/npm/v/bd-bank-routing?logo=npm&label=npm)](https://www.npmjs.com/package/bd-bank-routing)
+[![PyPI](https://img.shields.io/pypi/v/bd-bank-routing?logo=pypi&logoColor=white&label=PyPI)](https://pypi.org/project/bd-bank-routing/)
 
 ```python
 import bdbanks                                   # short import, like bs4

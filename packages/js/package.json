@@ -1,6 +1,6 @@
 {
   "name": "bd-bank-routing",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bangladesh bank, branch and BEFTN routing data \u2014 with the receipts",
   "keywords": [
     "bangladesh",
