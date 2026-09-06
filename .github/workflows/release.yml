@@ -42,6 +42,14 @@ jobs:
         with:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
+
+      # Jobs do not share a filesystem, so the install done in `verify` is not
+      # here. Without it `prepublishOnly` — which runs the build and the tests
+      # again as a last line of defence — dies with "vitest: not found".
+      - name: Install dev dependencies
+        working-directory: packages/js
+        run: npm ci
+
       - name: Build
         working-directory: packages/js
         run: npm run build
