@@ -28,6 +28,7 @@ const state = {
   names: new Map(),    // "225150135" -> "Agrabad Branch"
   byBank: new Map(),   // "225" -> [[routing, name], ...]
   all: [],             // [[routing, name], ...] in dataset order
+  byBankDistrict: null, // bank -> district -> branches, built on first use
   branchesReady: false,
   sort: { key: "code", dir: 1 },
   filter: "",
@@ -225,6 +226,16 @@ function showRouting(routing, storedName) {
 
   const bank = state.byCode.get(br.bankCode);
   const unreachable = !br.payable || isSettlementEndpoint(br.name);
+  // Someone who arrived through the dropdowns came for this number. Give it to
+  // them as one copyable string, not only as four coloured fragments above.
+  const numberOut = `
+    <div class="routing-out">
+      <div>
+        <span class="eyebrow">Routing number</span>
+        <strong class="num">${esc(br.routing)}</strong>
+      </div>
+      <button type="button" class="copy" data-copy="${esc(br.routing)}">Copy</button>
+    </div>`;
   const bad = res.problems.length > 0;
 
   // Three different answers, and collapsing them into one loses the useful half.
@@ -241,6 +252,7 @@ function showRouting(routing, storedName) {
           sub: "The branch resolves and can receive a salary — but your record names a different institution." };
 
   renderResult(`
+    ${numberOut}
     <div class="verdict verdict--${verdict.cls}">${verdict.mark}
       <div><strong>${esc(verdict.title)}</strong>
       <p>${esc(verdict.sub)}</p></div>
@@ -343,12 +355,25 @@ function run() {
       loadBranches().then(run);
       return;
     }
-    history.replaceState(null, "", `#/r/${digits}`);
-    showRouting(digits, stored);
+    resolve(digits, stored);
+    syncPicker(digits);
     return;
   }
 
   showSearch(raw);
+}
+
+/**
+ * Show a routing number's answer, from wherever it was chosen.
+ *
+ * The typed box and the three dropdowns are two routes to the same question, so
+ * they share this rather than each rendering their own version of the answer.
+ */
+function resolve(routing, stored = "") {
+  renderAnatomy(routing);
+  $("#anatomy").style.opacity = "1";
+  history.replaceState(null, "", `#/r/${routing}`);
+  showRouting(routing, stored);
 }
 
 function fill(q, stored = "") {
@@ -357,6 +382,143 @@ function fill(q, stored = "") {
   run();
   $("#lookup").scrollIntoView({ behavior: "smooth", block: "start" });
   $("#q").focus({ preventScroll: true });
+}
+
+/* ------------------------------------------------------------ branch picker */
+
+/** bank code -> district -> [[routing, name], ...], built once from the index. */
+function pickerIndex() {
+  if (state.byBankDistrict) return state.byBankDistrict;
+  const idx = new Map();
+  for (const [code, rows] of state.byBank) {
+    const byDistrict = new Map();
+    for (const [routing, name] of rows) {
+      // Districts are never stored per branch — they come from digits 4-5, the
+      // same derivation the rest of the page uses.
+      const district = districtOf(routing) ?? "—";
+      let bucket = byDistrict.get(district);
+      if (!bucket) byDistrict.set(district, (bucket = []));
+      bucket.push([routing, name]);
+    }
+    idx.set(code, byDistrict);
+  }
+  state.byBankDistrict = idx;
+  return idx;
+}
+
+const option = (value, label) => {
+  const o = document.createElement("option");
+  o.value = value;
+  o.textContent = label;
+  return o;
+};
+
+function setOptions(select, placeholder, entries, { disabled = false } = {}) {
+  select.replaceChildren(option("", placeholder));
+  for (const [value, label] of entries) select.append(option(value, label));
+  select.disabled = disabled;
+}
+
+function fillBanks() {
+  // Sorted by name, because someone looking for their own bank scans for a
+  // name, not for a three-digit prefix they have never seen.
+  const entries = [...state.meta.banks]
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((b) => [b.code, b.payable ? b.name : `${b.name} — no salaries`]);
+  setOptions($("#pick-bank"), "Choose your bank…", entries);
+}
+
+async function onBankChange() {
+  const code = $("#pick-bank").value;
+  const branch = $("#pick-branch");
+  const district = $("#pick-district");
+  if (!code) {
+    setOptions(district, "Choose a bank first", [], { disabled: true });
+    setOptions(branch, "Choose a district first", [], { disabled: true });
+    return;
+  }
+  // The branch index loads in the background, and someone can reach this
+  // dropdown before it arrives. Waiting beats silently offering no districts.
+  if (!state.branchesReady) {
+    setOptions(district, "Loading districts…", [], { disabled: true });
+    await loadBranches();
+    if ($("#pick-bank").value !== code) return; // they moved on while we waited
+  }
+  const byDistrict = pickerIndex().get(code) ?? new Map();
+  const names = [...byDistrict.keys()].sort();
+  setOptions(
+    district,
+    `Choose a district… (${names.length})`,
+    names.map((d) => [d, `${d} — ${byDistrict.get(d).length} branch${byDistrict.get(d).length === 1 ? "" : "es"}`]),
+  );
+  setOptions(branch, "Choose a district first", [], { disabled: true });
+}
+
+function onDistrictChange() {
+  const code = $("#pick-bank").value;
+  const district = $("#pick-district").value;
+  const branch = $("#pick-branch");
+  if (!code || !district) {
+    setOptions(branch, "Choose a district first", [], { disabled: true });
+    return;
+  }
+  const rows = (pickerIndex().get(code)?.get(district) ?? [])
+    .slice()
+    .sort((a, b) => a[1].localeCompare(b[1]));
+  setOptions(
+    branch,
+    `Choose a branch… (${rows.length})`,
+    rows.map(([routing, name]) => [routing, name]),
+  );
+}
+
+function onBranchChange() {
+  const routing = $("#pick-branch").value;
+  if (!routing) return renderResult("");
+  $("#q").value = routing;
+  resolve(routing, $("#stored").value.trim());
+}
+
+/** Point the three dropdowns at a routing someone typed, so the two routes agree. */
+function syncPicker(routing) {
+  const branch = lookup(routing);
+  if (!branch) return;
+  const bank = $("#pick-bank");
+  if (bank.value !== branch.bankCode) {
+    bank.value = branch.bankCode;
+    onBankChange();  // synchronous here: a resolved routing means branches loaded
+  }
+  const district = $("#pick-district");
+  const want = branch.district ?? "—";
+  if (district.value !== want) {
+    district.value = want;
+    onDistrictChange();
+  }
+  $("#pick-branch").value = routing;
+}
+
+function wireTabs() {
+  const tabs = $$('[role="tab"]');
+  const select = (tab) => {
+    for (const t of tabs) {
+      const on = t === tab;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      $(`#${t.getAttribute("aria-controls")}`).hidden = !on;
+    }
+    tab.focus();
+  };
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => select(tab));
+    tab.addEventListener("keydown", (e) => {
+      // Arrow keys move between tabs — the expected behaviour for a tablist,
+      // and the reason this is a real tablist rather than two buttons.
+      const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!step) return;
+      e.preventDefault();
+      select(tabs[(i + step + tabs.length) % tabs.length]);
+    });
+  });
 }
 
 /* ------------------------------------------------------------- banks table */
@@ -514,6 +676,26 @@ async function main() {
     const chip = e.target.closest("[data-q]");
     if (chip) return fill(chip.dataset.q, chip.dataset.stored ?? "");
 
+    const copy = e.target.closest("[data-copy]");
+    if (copy) {
+      navigator.clipboard?.writeText(copy.dataset.copy).then(
+        () => {
+          copy.textContent = "Copied";
+          copy.classList.add("copy--done");
+          setTimeout(() => {
+            copy.textContent = "Copy";
+            copy.classList.remove("copy--done");
+          }, 1600);
+        },
+        // Clipboard access can be refused (permissions, insecure origin). Say so
+        // rather than showing "Copied" over a clipboard that did not change.
+        () => {
+          copy.textContent = "Select and copy";
+        },
+      );
+      return;
+    }
+
     const hit = e.target.closest("[data-routing]");
     if (hit) return fill(hit.dataset.routing);
 
@@ -568,6 +750,12 @@ async function main() {
     syncToggleLabel();
   });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", syncToggleLabel);
+
+  wireTabs();
+  fillBanks();
+  $("#pick-bank").addEventListener("change", onBankChange);
+  $("#pick-district").addEventListener("change", onDistrictChange);
+  $("#pick-branch").addEventListener("change", onBranchChange);
 
   // The branch index is what makes the box above work, so start it immediately
   // rather than on the first keystroke.

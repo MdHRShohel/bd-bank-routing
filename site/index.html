@@ -45,7 +45,7 @@
     <nav class="site-nav" aria-label="Sections">
       <a href="#lookup">Lookup</a>
       <a href="#catches" class="hide-sm">What it catches</a>
-      <a href="#banks">Banks</a>
+      <a href="#banks" class="hide-xs">Banks</a>
       <a href="#provenance" class="hide-sm">Provenance</a>
       <a href="#faq" class="hide-sm">FAQ</a>
       <a href="#install" class="hide-xs">Install</a>
@@ -88,12 +88,21 @@
       <p class="eyebrow">Lookup</p>
       <h2 id="lookup-h">Resolve a routing number, or find a branch</h2>
       <p>
-        A BD routing number is not an opaque token stored beside a bank name — it
-        <em>is</em> the bank and the district. Type nine digits and watch it come apart.
+        Have the number? Type it and watch it come apart into bank, district and
+        branch. Don&rsquo;t have it? Pick your bank, district and branch instead — a BD
+        routing number <em>is</em> those three things, so it works in either direction.
       </p>
     </header>
 
     <div class="lookup">
+      <div class="tabs" role="tablist" aria-label="How to find a routing number">
+        <button type="button" class="tab" role="tab" id="tab-number"
+                aria-selected="true" aria-controls="panel-number">I have the number</button>
+        <button type="button" class="tab" role="tab" id="tab-pick" tabindex="-1"
+                aria-selected="false" aria-controls="panel-pick">Find my branch</button>
+      </div>
+
+      <div id="panel-number" role="tabpanel" aria-labelledby="tab-number">
       <form class="lookup__form" id="lookup-form" autocomplete="off" novalidate>
         <div class="field">
           <label for="q">Routing number, or a bank / branch name</label>
@@ -117,6 +126,33 @@
         <button type="button" class="chip" data-q="405000018">Nobody banks there</button>
         <button type="button" class="chip" data-q="215761333">A prefix that is not its bank</button>
         <button type="button" class="chip" data-q="Agrabad">A branch by name</button>
+      </div>
+      </div>
+
+      <div id="panel-pick" role="tabpanel" aria-labelledby="tab-pick" hidden>
+        <div class="picker">
+          <div class="field">
+            <label for="pick-bank">Bank</label>
+            <select id="pick-bank" aria-describedby="pick-bank-help">
+              <option value="">Choose your bank…</option>
+            </select>
+            <p class="help" id="pick-bank-help">All 63 institutions, including those no salary can be paid to.</p>
+          </div>
+          <div class="field">
+            <label for="pick-district">District</label>
+            <select id="pick-district" disabled aria-describedby="pick-district-help">
+              <option value="">Choose a bank first</option>
+            </select>
+            <p class="help" id="pick-district-help">Only the districts this bank actually has a branch in.</p>
+          </div>
+          <div class="field">
+            <label for="pick-branch">Branch</label>
+            <select id="pick-branch" disabled aria-describedby="pick-branch-help">
+              <option value="">Choose a district first</option>
+            </select>
+            <p class="help" id="pick-branch-help">Pick a branch and its routing number appears below.</p>
+          </div>
+        </div>
       </div>
 
       <div class="anatomy" id="anatomy" aria-hidden="true">

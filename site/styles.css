@@ -612,3 +612,87 @@ td.name a:hover { color: var(--accent); text-decoration: underline; }
   .wordmark .bd { font-size: 14.5px; }
   .wordmark .rest { font-size: 13.5px; }
 }
+
+/* ---------- lookup tabs + cascading picker -------------------------------- */
+
+.tabs {
+  display: flex; gap: 0.25rem;
+  padding: 0.4rem clamp(1.25rem, 3vw, 1.75rem) 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.tab {
+  position: relative;
+  min-height: 44px; padding: 0 0.9rem;
+  font: 500 14px/1 var(--sans); color: var(--fg-muted);
+  background: none; border: 0; cursor: pointer;
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+  transition: color var(--step), background var(--step);
+}
+.tab:hover { color: var(--fg); background: var(--surface-2); }
+.tab[aria-selected="true"] { color: var(--fg); font-weight: 600; }
+.tab[aria-selected="true"]::after {
+  content: ""; position: absolute; inset-inline: 0.6rem; bottom: -1px;
+  height: 2px; background: var(--accent); border-radius: 2px 2px 0 0;
+}
+
+.picker {
+  display: grid; gap: 1.1rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+@media (min-width: 860px) { .picker { grid-template-columns: repeat(3, 1fr); } }
+
+.picker select {
+  width: 100%; min-height: 52px;
+  padding: 0.7rem 2.4rem 0.7rem 0.9rem;
+  font: 500 0.98rem/1.4 var(--sans);
+  color: var(--fg);
+  background-color: var(--bg);
+  border: 1px solid var(--border-input);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  appearance: none;
+  /* Chevron drawn as a background image so the control keeps a native <select>
+     underneath — the platform's own picker is better on mobile than anything
+     hand-rolled, and it stays keyboard- and screen-reader-correct for free. */
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+                    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 1.15rem) 55%, calc(100% - 0.8rem) 55%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  transition: border-color var(--step), box-shadow var(--step), opacity var(--step);
+}
+.picker select:hover:not(:disabled) { border-color: var(--fg-faint); }
+.picker select:focus-visible {
+  outline: none; border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 25%, transparent);
+}
+.picker select:disabled {
+  opacity: 0.5; cursor: not-allowed;
+  background-color: var(--surface-2); color: var(--fg-faint);
+}
+.picker select option { color: var(--fg); background: var(--surface); }
+
+/* ---------- the answer, as one copyable number ---------------------------- */
+
+.routing-out {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  margin-bottom: 1.25rem; padding: 0.9rem 1.1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+.routing-out .eyebrow { display: block; margin-bottom: 0.25rem; }
+.routing-out strong {
+  font: 600 clamp(1.5rem, 4vw, 1.9rem)/1.1 var(--mono);
+  letter-spacing: 0.06em; color: var(--accent);
+}
+.copy {
+  margin-inline-start: auto;
+  min-height: 44px; padding: 0 1rem;
+  font: 500 13px/1 var(--mono); cursor: pointer;
+  color: var(--fg); background: var(--surface);
+  border: 1px solid var(--border-input); border-radius: var(--r-sm);
+  transition: color var(--step), border-color var(--step), background var(--step);
+}
+.copy:hover { border-color: var(--accent); }
+.copy--done { color: var(--accent-fg); background: var(--accent); border-color: var(--accent); }

@@ -100,7 +100,7 @@ def chrome_header(prefix: str) -> str:
     <a class="wordmark plain" href="{prefix}" aria-label="BD Bank Routing — Bangladesh bank routing numbers"><svg class="flag" viewBox="0 0 20 12" aria-hidden="true"><rect width="20" height="12" rx="2.5" fill="var(--bd-green)"/><circle cx="9" cy="6" r="3.5" fill="var(--bd-red)"/></svg><span class="bd">BD</span><span class="rest">Bank Routing</span></a>
     <nav class="site-nav" aria-label="Sections">
       <a href="{prefix}#lookup">Lookup</a>
-      <a href="{prefix}#banks">Banks</a>
+      <a href="{prefix}#banks" class="hide-xs">Banks</a>
       <a href="{prefix}#faq" class="hide-xs">FAQ</a>
       <button type="button" class="theme" id="theme-toggle" aria-label="Switch theme">
         <svg class="moon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.3 12.9A7.5 7.5 0 0 1 7.1 2.7a7.5 7.5 0 1 0 10.2 10.2Z"/></svg>
